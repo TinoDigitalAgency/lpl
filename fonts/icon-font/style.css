@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?7dhrxx');
+  src:  url('fonts/icomoon.eot?7dhrxx#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?7dhrxx') format('truetype'),
+    url('fonts/icomoon.woff?7dhrxx') format('woff'),
+    url('fonts/icomoon.svg?7dhrxx#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-left-arrow:before {
+  content: "\e910";
+}
+.icon-right-arrow:before {
+  content: "\e911";
+}
+.icon-close:before {
+  content: "\e90d";
+}
+.icon-instagram:before {
+  content: "\e90e";
+}
+.icon-search:before {
+  content: "\e90f";
+}
+.icon-pc:before {
+  content: "\e90c";
+}
+.icon-ps:before {
+  content: "\e90a";
+}
+.icon-xbox:before {
+  content: "\e90b";
+}
+.icon-discord:before {
+  content: "\e900";
+}
+.icon-fb:before {
+  content: "\e901";
+}
+.icon-twitch:before {
+  content: "\e902";
+}
+.icon-twitter:before {
+  content: "\e903";
+}
+.icon-youtube:before {
+  content: "\e904";
+}
+.icon-calendar:before {
+  content: "\e905";
+}
+.icon-mobile:before {
+  content: "\e906";
+}
+.icon-steam:before {
+  content: "\e907";
+}
+.icon-team:before {
+  content: "\e908";
+}
+.icon-time:before {
+  content: "\e909";
+}

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: Geogrotesque;
+  src: url("../fonts/Geogrotesque Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Geogrotesque;
+  src: url("../fonts/Geogrotesque Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Geogrotesque;
+  src: url("../fonts/Geogrotesque Light.ttf");
+  font-weight: 300;
+}
+
+body {
+  font-size: 20px;
+  font-family: Geogrotesque;
+  line-height: 1;
+  font-weight: 400;
+  color: $white;
+}
+
+
+h1,.h1 {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 98px;
+  margin: 0;
+}
+h2,.h2 {
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 700;
+  margin: 0;
+}
+h3,.h3 {
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 700;
+  margin: 0;
+}
+h4,.h4 {
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+h5,.h5 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+p {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+a {
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 400ms;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-center {
+  text-align: center;
+}

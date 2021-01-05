@@ -1,0 +1,65 @@
+.block-icon {
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  &-steam {
+    background-image: url(../images/icons/steam.svg);
+    width: 40px;
+    height: 40px;
+  }
+  &-mobile {
+    background-image: url(../images/icons/mobile.svg);
+    width: 38px;
+    height: 46px;
+  }
+  &-xbox {
+    background-image: url(../images/icons/xbox.svg);
+    width: 40px;
+    height: 40px;
+  }
+  &-ps {
+    background-image: url(../images/icons/ps.svg);
+    width: 51.23px;
+    height: 37.9px;
+  }
+  &-fb {
+    background-image: url(../images/icons/fb.svg);
+    width: 38px;
+    height: 38px;
+  }
+  &-twitter {
+    background-image: url(../images/icons/twitter.svg);
+    width: 46px;
+    height: 46px;
+  }
+  &-youtube {
+    background-image: url(../images/icons/youtube.svg);
+    width: 46px;
+    height: 46px;
+  }
+  &-discord {
+    background-image: url(../images/icons/discord.svg);
+    width: 46px;
+    height: 46px;
+  }
+  &-twitch {
+    background-image: url(../images/icons/twitch.svg);
+    width: 37px;
+    height: 38.56px;
+  }
+  &-time {
+    background-image: url(../images/icons/time.svg);
+    width: 47px;
+    height: 47px;
+  }
+  &-calendar {
+    background-image: url(../images/icons/calendar.svg);
+    width: 46.7px;
+    height: 46.7px;
+  }
+  &-team {
+    background-image: url(../images/icons/team.svg);
+    width: 47px;
+    height: 40px;
+  }
+}

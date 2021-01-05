@@ -1,0 +1,37 @@
+// Brand Colors
+$green:  #30D98D;
+$matte:  #181516;
+$white:  #fff;
+$gold:   #EDA964;
+$silver: #E8DCE0;
+$bronze: #89502D;
+
+// Hero Game Colors
+$dota:     #189565;
+$pugb:     #EF9031;
+$pugbDark: #B75012;
+$csgo:     #1E1F23;
+$valorant: #DF1E43;
+$rainbow:  #404040;
+
+// Game Color Gradients
+.dota-gradient {
+  background: rgb(24,149,101);
+  background: linear-gradient(90deg, rgba(24,149,101,1) 0%, rgba(24,149,101,0.5242471988795518) 40%, rgba(100,98,99,0) 100%);
+}
+.pubg-gradient {
+  background: rgb(239,144,49);
+  background: linear-gradient(90deg, rgba(239,144,49,1) 0%, rgba(245,132,19,0.6362920168067228) 40%, rgba(100,98,99,0) 100%);
+}
+.csgo-gradient {
+  background: rgb(30,31,35);
+  background: linear-gradient(90deg, rgba(30,31,35,1) 0%, rgba(30,31,35,0.6418942577030813) 40%, rgba(100,98,99,0) 100%);
+}
+.valorant-gradient {
+  background: rgb(237,20,63);
+  background: linear-gradient(90deg, rgba(237,20,63,1) 0%, rgba(223,30,67,0.6418942577030813) 40%, rgba(100,98,99,0) 100%);
+}
+.rainbow-gradient {
+  background: rgb(64,64,64);
+  background: linear-gradient(90deg, rgba(64,64,64,1) 0%, rgba(64,64,64,0.6418942577030813) 40%, rgba(100,98,99,0) 100%);
+}

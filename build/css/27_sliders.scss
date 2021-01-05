@@ -1,0 +1,74 @@
+.scroll-slider {
+
+  .swiper-slide {
+    width: 375px;
+  }
+}
+.team-slider {
+  padding-left: 20px;
+  margin-left: -20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.channel-slider {
+  .swiper-slide {
+    width: 286px;
+  }
+}
+
+.leader-slider {
+  padding-left: 25px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  margin-left: -25px;
+  .swiper-slide {
+    width: 810px;
+  }
+}
+.btn-slider-nav-prev,
+.swiper-button-prev  {
+  left: -67px;
+}
+.btn-slider-nav-next,
+.swiper-button-next {
+  right: 53px;
+}
+.btn-slider-nav,
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width:67px;
+  height: 67px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  background: #464445;
+  color: $matte;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 400ms;
+  z-index: 3;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: $green;
+    background: $white;
+  }
+  &::after {
+    display: none;
+  }
+  &.swiper-button-disabled {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.slider-wrapper {
+  position: relative;
+}
