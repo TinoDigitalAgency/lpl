@@ -1,7 +1,41 @@
 (function($){
     new WOW().init();
 
+    //---------- HERO GAME HOVER ----------//
+        var parentWidth,
+            contentWidth,
+            offsetClip,
+            t;
 
+
+        initGameItm($('.hero-game-item:first-child .hero-game'));
+        $(window).on('resize',initGameItm($('.hero-game-item:first-child .hero-game')));
+
+
+        $('.hero-game').hover(function () {
+            parentWidth = $(this).width();
+            contentWidth = $(this).find('.hero-game-image').width();
+            offsetClip = (contentWidth - parentWidth) / 2;
+            $('.hero-game-item').removeClass('hero-game-hover');
+            $(this).parent().addClass('hero-game-hover');
+            $(this).find('.hero-game-image').css({
+                'transform': 'translateX(-'+offsetClip+'px)',
+                'clip-path' : 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+            });
+        }, function () {
+            parentWidth = $(this).width();
+            contentWidth = $(this).find('.hero-game-image').width();
+            offsetClip = (contentWidth - parentWidth) / 2;
+            $(this).find('.hero-game-image').css({
+                'transform': 'translateX(-'+offsetClip+'px)',
+                'clip-path' : 'polygon('+offsetClip+'px 0, calc(100% - '+offsetClip+'px) 0, calc(100% - '+offsetClip+'px) 100%, '+offsetClip+'px 100%)'
+            });
+
+
+            t = setTimeout(function () {
+                // $('.hero-game-item').removeClass('hero-game-hover');
+            },400);
+        });
     $(document).ready(function () {
 
         //-------- SLIDER INIT ---------//
@@ -149,6 +183,10 @@
             $('.main-menu-link').removeClass('active');
         });
 
+
+
+
+
         //---------- FILTER CLICK ---------//
         $('.platform-list.filter .platform-item').on('click',function (e) {
             e.preventDefault();
@@ -192,4 +230,24 @@
         })
 
     });
+
+    function initGameItm(item) {
+        var parentWidth = item.width();
+        var contentWidth = item.find('.hero-game-image').width();
+        var offsetClip = (contentWidth - parentWidth) / 2;
+        $('.hero-game-image').css({
+            'transform': 'translateX(-'+offsetClip+'px)',
+            'clip-path' : 'polygon('+offsetClip+'px 0, calc(100% - '+offsetClip+'px) 0, calc(100% - '+offsetClip+'px) 100%, '+offsetClip+'px 100%)'
+        });
+        $('.hero-game-item:last-child').hover(function () {
+            $(this).find('.hero-game-image').css({
+                'transform': 'translateX(-'+offsetClip*2+'px)',
+            })
+            console.log('last child Hover')
+        },function () {
+            $(this).find('.hero-game-image').css({
+                'transform': 'translateX(-'+offsetClip+'px)',
+            })
+        });
+    }
 })(jQuery);

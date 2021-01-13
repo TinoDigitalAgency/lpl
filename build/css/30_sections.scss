@@ -1,17 +1,16 @@
 .section {
   .section-inner {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 }
 .section-hero {
-  background: url(../images/Homepage-bg.png) center center repeat;
-  background-attachment: fixed;
+  overflow: hidden;
   .section-inner {
     padding-top: 106px;
     padding-bottom: 0px;
   }
   .h1 {
-    //text-transform: uppercase;
+    text-transform: uppercase;
     margin-bottom: 27px;
     .small {
       display: block;
@@ -25,7 +24,7 @@
     text-align: center;
   }
   .hero-game-list {
-    margin-top: 45px;
+    margin-top: 100px;
   }
 }
 .section-hero-tournament {
@@ -110,7 +109,7 @@
 }
 .section-competition {
   .section-inner {
-    padding-top: 166px;
+    padding-top: 100px;
   }
   .platform-block {
     margin-bottom: 65px;
@@ -120,27 +119,27 @@
 
 .section-twitch {
   .section-title {
-    margin-bottom: 80px;
+    //margin-bottom: 80px;
   }
 }
 .section-channels {
   .section-title {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
   .button-group {
-    margin-top: 117px;
+    margin-top: 45px;
   }
 }
 
 .section-announcement {
   .section-title {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
 }
 
 .section-news {
   .section-title {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
   .button-group {
     margin-top: 40px;
@@ -212,7 +211,7 @@
     .game-logo {
       width: 100%;
       flex: 0 0 100%;
-      max-width: 660px;
+      max-width: 482px;
     }
   }
   &__csgo {
@@ -286,7 +285,7 @@
     margin-top: 130px;
   }
   .section-title {
-    margin-bottom: 100px;
+    //margin-bottom: 100px;
   }
 
 }
@@ -296,4 +295,93 @@
     margin-bottom: 45px;
     text-align: center;
   }
+}
+
+.section-hero-match {
+  .section-inner {
+    padding: 220px 0 425px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 100%;
+  }
+  & + .section-match-info {
+    margin-top: -220px;
+    position: relative;
+    z-index: 2;
+    .section-inner {
+      padding-top: 0;
+    }
+  }
+
+  &__csgo {
+    .section-inner {
+      &::before {
+        opacity: .12;
+        background: #404040;
+        background: linear-gradient(90deg, rgba(#E26D38,1) 0%, rgba(#E26D38,0.5242471988795518) 30%, rgba(#646263,0) 100%);
+      }
+    }
+  }
+  &__pugb {
+    .section-inner {
+      &::before {
+        opacity: .12;
+        background: #000;
+        background: linear-gradient(90deg, rgba(#B75012,1) 0%, rgba(#B75012,0.5242471988795518) 40%, rgba(#646263,0) 100%);
+      }
+    }
+  }
+  &__valorant {
+    .section-inner {
+      &::before {
+        opacity: .12;
+        background: #ED143F;
+        background: linear-gradient(90deg, rgba(#ED143F,1) 0%, rgba(#DF1E43,0.64) 40%, rgba(#646263,0) 100%);
+      }
+    }
+  }
+  &__rainbow {
+    .section-inner {
+      &::before {
+        opacity: .12;
+        background: #000;
+        background: linear-gradient(90deg, rgba(#000,1) 0%, rgba(#404040,1) 40%, rgba(#646263,0) 100%);
+      }
+    }
+  }
+}
+
+.section-match-maps {
+ .h2 {
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 100px;
+ }
+}
+.section-match-activity {
+ .h2 {
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 100px;
+ }
+}
+.section-forum {
+ .h2 {
+   text-align: center;
+   text-transform: uppercase;
+   margin-bottom: 70px;
+ }
 }

@@ -24,16 +24,16 @@
   .logo {
     display: block;
     img {
-      max-width: 120px;
+      max-width: 151px;
     }
   }
   .col-menu {
-    flex: 0 0 calc(100% - 408px);
-    max-width: calc(100% - 408px);
+    flex: 0 0 calc(100% - 448px);
+    max-width: calc(100% - 448px);
   }
   .col-logo,
   .col-button {
-    flex: 0 0 204px;
+    flex: 0 0 224px;
     position: relative;
   }
 
