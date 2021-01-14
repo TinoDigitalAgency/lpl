@@ -117,10 +117,12 @@
     }
   }
   .btn {
-    color: $white;
-    &:hover {
-      color: $matte;
-    }
+    padding-top: 7px ;
+    padding-bottom: 6px;
+    //color: $white;
+    //&:hover {
+    //  color: $matte;
+    //}
   }
   .platform-button {
     display: flex;
@@ -504,7 +506,10 @@
   margin-bottom: 90px;
   .h2 {
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin: 0;
+    & + p {
+      margin-top: 15px;
+    }
     &.has-logo {
       display: flex;
       align-items: center;
@@ -528,7 +533,9 @@
     }
   }
   p {
-    max-width: 615px;
+    max-width: 722px;
+    //margin: 0;
+    margin-bottom: 0;
   }
 
 }
@@ -846,6 +853,7 @@
     }
   }
   p {
+    font-size: 17px;
     & +p {
       margin-top: 27px;
     }
@@ -993,7 +1001,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
   .h1 {
@@ -1034,7 +1042,7 @@
   }
 }
 .row-info-blocks {
-  margin-top: 50px;
+  margin-top: 160px;
 }
 .info-block {
   box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.16);
@@ -1496,4 +1504,59 @@
   .scroll-content {
     height: 700px;
   }
+}
+
+.text-widget {
+  padding: 82px 50px 82px 90px;
+  margin-top: 90px;
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.16);
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 50px;
+  }
+}
+.scroll-text-wrapper {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-transform: uppercase;
+
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 40px;
+  }
+  h5 {
+    margin-bottom: 15px;
+  }
+  p {
+    line-height: 36px;
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5 {
+      margin-top: 50px;
+    }
+  }
+  .mCSB_inside>.mCSB_container {
+    margin-right: 50px;
+  }
+  .scroll-text {
+    max-height: 442px;
+  }
+}
+.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #53DB89 !important;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 5px;
 }

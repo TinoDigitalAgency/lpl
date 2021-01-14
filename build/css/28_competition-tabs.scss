@@ -8,6 +8,7 @@ body {
   width: 100%;
   max-width: 811px;
   background: $matte;
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.16);
 
   .competition-table-head {
     padding: 60px 50px;
@@ -57,7 +58,7 @@ body {
   &__csgo {
     .competition-table-head {
       .title {
-        color: #E26D38;
+        //color: #E26D38;
       }
     }
     .tab-wrapper .tab-menu .tab-trigger span::before {
@@ -67,7 +68,7 @@ body {
   &__dota {
     .competition-table-head {
       .title {
-        color: $dota;
+        //color: $dota;
       }
     }
     .tab-wrapper .tab-menu .tab-trigger span::before {
@@ -77,7 +78,7 @@ body {
   &__pugb {
     .competition-table-head {
       .title {
-        color: $pugbDark;
+        //color: $pugbDark;
       }
     }
     .tab-wrapper .tab-menu .tab-trigger span::before {
@@ -87,11 +88,26 @@ body {
   &__valorant {
     .competition-table-head {
       .title {
-        color: $valorant;
+        //color: $valorant;
       }
     }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: $valorant;
+    }
+  }
+  &__yellow {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #FAF84B;
+    }
+  }
+  &__orange {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #FF4800;
+    }
+  }
+  &__blue {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #00FFEF;
     }
   }
 }
@@ -117,6 +133,7 @@ body {
       cursor: pointer;
       transition: all 400ms;
       opacity: .21;
+      text-transform: uppercase;
       span {
         position: relative;
         display: block;
@@ -196,6 +213,7 @@ body {
         padding: 0 33px;
         span {
           padding: 0 0 17px 0;
+          text-transform: uppercase;
           &::before {
             height: 5px;
           }
@@ -278,6 +296,39 @@ body {
     justify-content: center;
     margin-left: 16px;
   }
+  &__green {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #2ED88B;
+    }
+    .fixtures-list .fixture-groupe {
+      background: #2ED88B;
+    }
+    .scroll-content .competition-table-head {
+      background: #2ED88B;
+    }
+  }
+  &__yellow {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #FAF84B;
+    }
+    .fixtures-list .fixture-groupe {
+      background: #FAF84B;
+    }
+    .scroll-content .competition-table-head {
+      background: #FAF84B;
+    }
+  }
+  &__pink {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #FF00A8;
+    }
+    .fixtures-list .fixture-groupe {
+      background: #FF00A8;
+    }
+    .scroll-content .competition-table-head {
+      background: #FF00A8;
+    }
+  }
   &__dota {
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #49A979;
@@ -295,6 +346,17 @@ body {
     }
     .scroll-content .competition-table-head {
       background: #E26D38;
+    }
+  }
+  &__blue {
+    .tab-wrapper .tab-menu .tab-trigger span::before {
+      background: #00FFEF;
+    }
+    .fixtures-list .fixture-groupe {
+      background: #00FFEF;
+    }
+    .scroll-content .competition-table-head {
+      background: #00FFEF;
     }
   }
   &__pugb {

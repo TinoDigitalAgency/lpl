@@ -106,6 +106,19 @@
                 prevEl: '.leader-slider-wrapper .leader-slider-prev',
             }
         });
+        var newsSlider = new Swiper('.news-slider', {
+            slidesPerView: 4,
+            spaceBetween: 60,
+            freeMode: true,
+            pagination: false,
+            mousewheel: {
+                forceToAxis: true,
+            },
+            navigation: {
+                nextEl: '.news-slider-wrapper .news-slider-next',
+                prevEl: '.news-slider-wrapper .news-slider-prev',
+            }
+        });
 
 
 

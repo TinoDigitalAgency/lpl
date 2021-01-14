@@ -60,6 +60,33 @@
     background: $white;
   }
 }
+.btn-orange-light {
+  background: #FF4800;
+  color: $white;
+  border-color: #FF4800;
+  &:hover {
+    color: #FF4800;
+    background: $white;
+  }
+}
+.btn-blue {
+  background: #00FFEF;
+  color: $matte;
+  border-color: #00FFEF;
+  &:hover {
+    color: $matte;
+    background: $white;
+  }
+}
+.btn-yellow {
+  background: #FAF84B;
+  color: $matte;
+  border-color: #FAF84B;
+  &:hover {
+    //color: ;
+    background: $white;
+  }
+}
 .btn-csgo,
 .btn-black {
   background: $csgo;
@@ -73,7 +100,7 @@
 .btn-valorant,
 .btn-pink {
   background: $valorant;
-  color: $white;
+  color: $matte;
   border-color: $valorant;
   &:hover {
     color: $valorant;

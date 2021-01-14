@@ -1,0 +1,166 @@
+.bracket {
+  display: inline-block;
+  //position: absolute;
+  //left: 50%;
+  //top: 50%;
+  //transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-size: 0;
+}
+.bracket .round {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bracket .round .winners > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.bracket .round .winners > div.matchups .matchup:last-child {
+  margin-bottom: 0 !important;
+}
+.bracket .round .winners > div.matchups .matchup .participants {
+  //border-radius: 0.25rem;
+  overflow: hidden;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant {
+  box-sizing: border-box;
+  color: #858585;
+  background: white;
+  width: 254px;
+  height: 49px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant.winner {
+  color: $matte;
+  .team-name {
+    color: $matte;
+  }
+  .team-score {
+    color: #2ED88B !important;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  //border-color: #60c645;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant.loser {
+  color: $white;
+  .team-score {
+    color: #A0001C;
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant:not(:last-child) {
+  border-bottom: thin solid #181516;
+}
+.bracket .round .winners > div.matchups .matchup .participants .participant span {
+  line-height: 18px;
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
+  &.team-name {
+    color: $white;
+  }
+
+  &.team-score {
+    color: #A0001C;
+    font-size: 28px;
+    font-weight: 500;
+  }
+}
+.bracket .round .winners > div.connector.filled .line, .bracket .round .winners > div.connector.filled.bottom .merger:after, .bracket .round .winners > div.connector.filled.top .merger:before {
+  border-color: #60c645;
+}
+.bracket .round .winners > div.connector .line, .bracket .round .winners > div.connector .merger {
+  box-sizing: border-box;
+  width: 2rem;
+  display: inline-block;
+  vertical-align: top;
+}
+.bracket .round .winners > div.connector .line {
+  border-bottom: thin solid #c0c0c8;
+  height: 4rem;
+}
+.bracket .round .winners > div.connector .merger {
+  position: relative;
+  height: 8rem;
+}
+.bracket .round .winners > div.connector .merger:before, .bracket .round .winners > div.connector .merger:after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  border: 0 solid;
+  border-color: #c0c0c8;
+}
+.bracket .round .winners > div.connector .merger:before {
+  border-right-width: thin;
+  border-top-width: thin;
+}
+.bracket .round .winners > div.connector .merger:after {
+  border-right-width: thin;
+  border-bottom-width: thin;
+}
+.bracket .round.quarterfinals .winners:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.bracket .round.quarterfinals .winners .matchups .matchup:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.bracket .round.semifinals .winners .matchups .matchup:not(:last-child) {
+  margin-bottom: 10rem;
+}
+.bracket .round.semifinals .winners .connector .merger {
+  height: 16rem;
+}
+.bracket .round.semifinals .winners .connector .line {
+  height: 8rem;
+}
+.bracket .round.finals .winners .connector .merger {
+  height: 3rem;
+}
+.bracket .round.finals .winners .connector .line {
+  height: 1.5rem;
+}
+
+.tournament-table {
+  padding: 78px 89px;
+}
+.bracket-wrapper {
+  margin-top: 110px;
+}
+
+.participants {
+  .participant {
+    display: flex;
+    position: relative;
+    padding: 15px 50px 12px 24px;
+    background: #5F5F5F !important;
+    &.winner {
+      background: $white !important;
+      .team-score {
+        border-left: 1px rgba(#707070,.14) solid;
+      }
+    }
+
+    .team-score {
+      position: absolute;
+      right: 0;
+      width: 50px;
+      top: 3.5px;
+      text-align: center;
+      padding: 11.5px 10px 12px 10px;
+      height: calc(100% - 7px);
+      border-left: 1px rgba(#FFFFFF,.14) solid;
+      line-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      color: #A0001C !important;
+    }
+  }
+}

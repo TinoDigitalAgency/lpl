@@ -1,6 +1,6 @@
 .section {
   .section-inner {
-    padding: 50px 0;
+    padding: 60px 0;
   }
 }
 .section-hero {
@@ -50,6 +50,7 @@
   .container {
     position: relative;
     z-index: 2;
+    flex: 0 0 100%;
   }
   &__dota {
     .section-inner {
@@ -154,9 +155,9 @@
 
 .section-hero-game {
   .section-inner {
-    min-height: 950px;
+    min-height: 900px;
     padding-top: 100px;
-    padding-bottom: 350px;
+    padding-bottom: 540px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,7 +272,7 @@
     }
   }
   & + .section-game-competition {
-    margin-top: -250px;
+    margin-top: -430px;
     .section-inner {
       padding-top: 0;
     }
@@ -282,7 +283,7 @@
 
 
   .button-group {
-    margin-top: 130px;
+    margin-top: 82px;
   }
   .section-title {
     //margin-bottom: 100px;
