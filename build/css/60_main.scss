@@ -1144,7 +1144,7 @@
     flex-wrap: wrap;
     margin-top: 20px;
     .team-score-item {
-      padding: 0 30px;
+      padding: 0 40px;
       display: flex;
       align-items: center;
       flex: 0 0 50%;
@@ -1208,7 +1208,7 @@
           content: '-';
           font-size: 159px;
           position: absolute;
-          left: -35px;
+          left: -43px;
           top: 50%;
           transform: translateY(-50%);
           font-weight: 700;
@@ -1231,7 +1231,7 @@
     }
     .team-score-status {
       text-align: center;
-      font-size: 28px;
+      font-size: 23px;
       line-height: 54px;
       font-weight: 400;
       flex: 0 0 100%;
@@ -1424,19 +1424,71 @@
   line-height: 28px;
   font-weight: 700;
   color: $white;
+  .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    line-height: 34px;
+    text-transform: uppercase;
+    z-index: 2;
+  }
   .match-map-image {
     display: block;
+    position: relative;
+    overflow: hidden;
     img {
       width: 100%;
       height: auto;
+      transition: all 10s;
     }
   }
   .match-map-name {
-    display: block;
-    margin-top: 38px;
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    //margin-top: 38px;
+    span {
+      padding: 13px 0;
+      display: block;
+    }
+  }
+  .team-logos {
+    display: flex;
+    padding: 0 25px;
+    .team-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      & + .team-logo {
+        margin-left: -29px;
+      }
+    }
   }
   &:hover {
     color: $green;
+    .match-map-image {
+      img {
+        transform: scale(1.2,1.2);
+      }
+    }
+  }
+  &__banned {
+    &:hover {
+      color: $white;
+    }
   }
 }
 .forum-topic {

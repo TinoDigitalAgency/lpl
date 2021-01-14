@@ -1,7 +1,10 @@
 .container {
+  @media (min-width: 1920px) {
+    max-width: calc(100% - 240px);
+  }
   max-width: 1740px;
-  padding-left: 90px;
-  padding-right: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-left: auto;
   margin-right: auto;
 }
