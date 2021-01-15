@@ -1,0 +1,53 @@
+.col-sign-in {
+  flex: 0 0 100%;
+  max-width: 670px;
+  width: 100%;
+}
+
+.sign-in-block {
+  background: #1D1D1D;
+  box-shadow: 0px 3px 6px 0px rgba(#1D1D1D,0.16);
+  border: 11px #181516 solid;
+  .tab-wrapper {
+    .tab-head {
+      margin-bottom: 0;
+      padding: 0;
+    }
+    .tab-menu {
+      li {
+        flex:  0 0 50%;
+        width: 50%;
+      }
+      .tab-trigger {
+        width: 100%;
+        padding: 25px;
+        font-size: 22px;
+        text-transform: uppercase;
+        line-height: 30px;
+        background: #181516;
+        opacity: 1;
+        position: relative;
+        &.active {
+          background: #1D1D1D;
+          color: #2ED88B;
+        }
+        span {
+          position: static;
+          &::before {
+            bottom: auto;
+            top: 0;
+            height: 6px;
+            background: #2ED88B;
+            //display:none;
+          }
+        }
+      }
+    }
+  }
+  .tab-item {
+    padding-bottom: 0 !important;
+  }
+  .tab-item-inner {
+    padding: 60px 44px 73px 44px;
+  }
+}

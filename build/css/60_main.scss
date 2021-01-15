@@ -25,7 +25,9 @@
   margin-bottom: 20px;
 }
 .bg-pattern {
-  background: url(../images/LPLBG.jpg) repeat center center;
+  background: url(../images/Homepage-bg.png) center center no-repeat fixed #181516;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
 

@@ -121,23 +121,18 @@
         });
 
 
-
-
-
-
-
-            $(window).on('load resize',function () {
-                if($('div').is('.scroll-slider')) {
-                    $('.scroll-slider').css({
-                        'width': $(window).width() - $('.scroll-slider').offset().left
-                    });
-                }
-                if($('div').is('.slider-wrapper')) {
-                    $('.slider-wrapper').css({
-                        'width': $(window).width() - $('.slider-wrapper').offset().left
-                    });
-                }
-            });
+        $(window).on('load resize',function () {
+            if($('div').is('.scroll-slider')) {
+                $('.scroll-slider').css({
+                    'width': $(window).width() - $('.scroll-slider').offset().left
+                });
+            }
+            if($('div').is('.slider-wrapper')) {
+                $('.slider-wrapper').css({
+                    'width': $(window).width() - $('.slider-wrapper').offset().left
+                });
+            }
+        });
 
 
         //--------- TAB HANDLER ---------//
@@ -165,6 +160,15 @@
             }
         });
 
+        //------ SELECT2 INIT -------//
+        $('.select-green').select2({
+            theme: "classic",
+            width: '100%'
+        });
+        $('.select-green').on('select2:select', function (e) {
+            // console.log($(this));
+            $(this).parent().find('.select2-selection__rendered').css({'color':'#fff'})
+        });
 
         //------ MARQUE BANNER ------//
         $('.marquee-text').marquee({
