@@ -140,6 +140,7 @@
 
 .section-news {
   .section-title {
+    //padding-bottom: 10px;
     //margin-bottom: 100px;
   }
   .button-group {
@@ -374,6 +375,9 @@
    text-transform: uppercase;
    margin-bottom: 100px;
  }
+  .section-inner {
+    padding-bottom: 10px;
+  }
 }
 .section-match-activity {
  .h2 {

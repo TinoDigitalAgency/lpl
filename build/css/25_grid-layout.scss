@@ -4,6 +4,10 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 66px;
   grid-row-gap: 62px;
+  @media (max-width: 1400px) {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
   //height: 400px;
   .item {
     &:nth-child(1) {

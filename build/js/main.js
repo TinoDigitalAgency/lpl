@@ -1,6 +1,17 @@
 (function($){
     new WOW().init();
-
+    $(window).on('load resize',function () {
+        if($('div').is('.scroll-slider')) {
+            $('.scroll-slider').css({
+                'width': $(window).width() - $('.scroll-slider').offset().left
+            });
+        }
+        if($('div').is('.slider-wrapper')) {
+            $('.slider-wrapper').css({
+                'width': $(window).width() - $('.slider-wrapper').offset().left
+            });
+        }
+    });
     //---------- HERO GAME HOVER ----------//
         var parentWidth,
             contentWidth,
@@ -8,34 +19,42 @@
             t;
 
 
-        initGameItm($('.hero-game-item:first-child .hero-game'));
-        $(window).on('resize',initGameItm($('.hero-game-item:first-child .hero-game')));
+        // initGameItm($('.hero-game-item:first-child .hero-game'));
+        // $(window).on('resize',initGameItm($('.hero-game-item:first-child .hero-game')));
+    // $('.hero-game').hover(function () {
+    //     console.log('Hover',$(this))
+    // },function () {
+    //
+    //     setTimeout(function () {
+    //         console.log('Hover Over',$(this));
+    //     },400);
+    //
+    // });
 
-
-        $('.hero-game').hover(function () {
-            parentWidth = $(this).width();
-            contentWidth = $(this).find('.hero-game-image').width();
-            offsetClip = (contentWidth - parentWidth) / 2;
-            $('.hero-game-item').removeClass('hero-game-hover');
-            $(this).parent().addClass('hero-game-hover');
-            $(this).find('.hero-game-image').css({
-                'transform': 'translateX(-'+offsetClip+'px)',
-                'clip-path' : 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
-            });
-        }, function () {
-            parentWidth = $(this).width();
-            contentWidth = $(this).find('.hero-game-image').width();
-            offsetClip = (contentWidth - parentWidth) / 2;
-            $(this).find('.hero-game-image').css({
-                'transform': 'translateX(-'+offsetClip+'px)',
-                'clip-path' : 'polygon('+offsetClip+'px 0, calc(100% - '+offsetClip+'px) 0, calc(100% - '+offsetClip+'px) 100%, '+offsetClip+'px 100%)'
-            });
-
-
-            t = setTimeout(function () {
-                // $('.hero-game-item').removeClass('hero-game-hover');
-            },400);
-        });
+        // $('.hero-game').hover(function () {
+        //     parentWidth = $(this).width();
+        //     contentWidth = $(this).find('.hero-game-image').width();
+        //     offsetClip = (contentWidth - parentWidth) / 2;
+        //     $('.hero-game-item').removeClass('hero-game-hover');
+        //     $(this).parent().addClass('hero-game-hover');
+        //     $(this).find('.hero-game-image').css({
+        //         'transform': 'translateX(-'+offsetClip+'px)',
+        //         'clip-path' : 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
+        //     });
+        // }, function () {
+        //     parentWidth = $(this).width();
+        //     contentWidth = $(this).find('.hero-game-image').width();
+        //     offsetClip = (contentWidth - parentWidth) / 2;
+        //     $(this).find('.hero-game-image').css({
+        //         'transform': 'translateX(-'+offsetClip+'px)',
+        //         'clip-path' : 'polygon('+offsetClip+'px 0, calc(100% - '+offsetClip+'px) 0, calc(100% - '+offsetClip+'px) 100%, '+offsetClip+'px 100%)'
+        //     });
+        //
+        //
+        //     t = setTimeout(function () {
+        //         // $('.hero-game-item').removeClass('hero-game-hover');
+        //     },400);
+        // });
     $(document).ready(function () {
 
         //-------- SLIDER INIT ---------//
@@ -47,10 +66,10 @@
             mousewheel: {
                 forceToAxis: true,
             },
-            // navigation: {
-            //     nextEl: '.swiper-button-next',
-            //     prevEl: '.swiper-button-prev',
-            // }
+            navigation: {
+                nextEl: '.competition-slider-next',
+                prevEl: '.competition-slider-prev',
+            }
         });
         var twitchSlider = new Swiper('.twitch-slider', {
             slidesPerView: 'auto',
@@ -84,12 +103,13 @@
             spaceBetween: 60,
             freeMode: true,
             pagination: false,
+            loop: true,
             mousewheel: {
                 forceToAxis: true,
             },
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.chanel-slider-next',
+                prevEl: '.chanel-slider-prev',
             },
 
         });
@@ -120,19 +140,31 @@
             }
         });
 
+        //--------- TIMER INIT ----------//
+        if($('*').is('.countdown')) {
+            $('.countdown').each(function () {
+                var date = $(this).attr('data-date');
+                // console.log(date)
+                $(this).countdown({
+                    date: date,
+                    onEnd:function() {
+                        // console.log(data);
+                        var elClass = this;
+                        console.log(elClass);
+                        $(this.el).parents('.status').addClass('started');
+                        $(this.el).parents('.status').find('.countdown-title').text('Live Now');
+                        $(this.el).parents('.status').find('.countdown').fadeOut(400);
+                        $(this.el).parents('.twitch-stream').addClass('twitch-stream-active twitch-stream-started');
+                        return;
+                    },
+                    render: function(data) {
+                        $(this.el).html("<div>" + this.leadingZeros(data.days, 2) + "<span>D:</span></div><div>" + this.leadingZeros(data.hours, 2) + "<span>H:</span></div><div>" + this.leadingZeros(data.min, 2) + "<span>M:</span></div><div>" + this.leadingZeros(data.sec, 2) + "<span>S</span></div>");
+                    }
+                });
+            });
+            // console.log('Has Contdown')
+        }
 
-        $(window).on('load resize',function () {
-            if($('div').is('.scroll-slider')) {
-                $('.scroll-slider').css({
-                    'width': $(window).width() - $('.scroll-slider').offset().left
-                });
-            }
-            if($('div').is('.slider-wrapper')) {
-                $('.slider-wrapper').css({
-                    'width': $(window).width() - $('.slider-wrapper').offset().left
-                });
-            }
-        });
 
 
         //--------- TAB HANDLER ---------//

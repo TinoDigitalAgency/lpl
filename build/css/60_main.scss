@@ -172,6 +172,8 @@
   span {
     padding: 0 20px;
     position: relative;
+    white-space: nowrap;
+    box-sizing: border-box;
     &::before {
       content: '';
       position: absolute;
@@ -193,6 +195,7 @@
   }
   .js-marquee {
     position: relative;
+    display: flex;
     & + .js-marquee {
       &::before {
         content: '';
@@ -296,21 +299,29 @@
       z-index: 3;
     }
     &:hover {
-
+      z-index: 3;
     }
 
     &:first-child {
       &:hover {
-        .hero-game .hero-game-image {
-          transform: translateX(0)!important;
+        .hero-game .hero-game-image .hero-game-image-content {
+          left: 0;
+          transform: translate(0,-50%);
         }
       }
     }
     &:last-child {
-      .hero-game {
-
+      .hero-game .hero-game-image .hero-game-image-content {
+        left: auto;
+        right: 0;
+        transform: translate(25%,-50%);
       }
       &:hover {
+        .hero-game .hero-game-image .hero-game-image-content {
+          left: auto;
+          right: 0;
+          transform: translate(0,-50%);
+        }
         //.hero-game .hero-game-image {
         //  transform: translateX(0)!important;
         //}
@@ -324,6 +335,7 @@
     //  width: 100%;
     //  height: auto;
     //}
+
   }
 }
 .hero-game {
@@ -338,11 +350,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150%;
+    width: 100%;
     transition: all 400ms ease-in-out;
     //clip-path: polygon(25% 0, 75% 0, 75% 100%, 25% 100%);
     //transform: translateX(-25%);
+    //z-index: 3;
     position: relative;
+    img {
+
+    }
     &::before {
       content: '';
       position: absolute;
@@ -350,13 +366,14 @@
       top: 0;
       width: 100%;
       height: 100%;
+      //z-index: 1;
       transition: all 400ms;
     }
     .hero-game-image-content {
       position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
+      left: 50%;
+      top: 50%;
+      width: 150%;
       height: 100%;
       border: 2px solid #2ED88B;
       padding: 42px 48px;
@@ -364,12 +381,41 @@
       display: flex;
       align-items: flex-end;
       transition: all 400ms;
+      transform: translate(-50%,-50%);
       opacity: 0;
       z-index: 1;
+      pointer-events: none;
+      @media (max-width: 1400px) {
+        padding: 30px;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(#000000,.75);
+        z-index: 2;
+      }
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+      }
       //z-index: ;
       p {
         font-size: 20px;
         line-height: 30px;
+        @media (max-width: 1400px) {
+          font-size: 18px;
+          line-height: 26px;
+        }
       }
       .button-group {
         display: flex;
@@ -385,7 +431,9 @@
       height: 390px;
       width: 100%;
       object-fit: cover;
+      object-position: center;
       max-width: none;
+      transition: all 500ms ease-out;
     }
   }
   .platform-list {
@@ -404,11 +452,16 @@
     line-height: 35px;
     margin-bottom: 12px;
   }
+  .hero-game-image-content-inner {
+    position: relative;
+    z-index: 3;
+  }
   .hero-game-overlay-content {
 
     img {
       max-width: 100%;
       height: auto;
+      transition: all 400ms;
     }
   }
   .hero-game-overlay {
@@ -431,18 +484,31 @@
       opacity: 0;
     }
     .hero-game-image {
+      //img {
+      //  transform: translateX(0) !important;
+      //}
       &::before {
         opacity: 0;
       }
       .hero-game-image-content {
+        pointer-events: auto;
         opacity: 1;
+        transform: translate(-50%,-50%);
       }
     }
   }
 
 
   &-dota {
+    //.hero-game-image-content::before {
+    //  background: rgba(44,158,101,.5);
+    //  background: linear-gradient(0deg, rgba(44,158,101,1) 0%, rgba(48,217,141,0.64) 25%, rgba(100,98,99,0) 100%);
+    //}
     .hero-game-image  {
+      //img {
+      //  transform: translateX(60px);
+      //}
+
       &::before {
         background: rgba(44,158,101,.5);
         background: linear-gradient(0deg, rgba(44,158,101,1) 0%, rgba(48,217,141,0.64) 25%, rgba(100,98,99,0) 100%);
@@ -455,6 +521,12 @@
     }
   }
   &-csgo {
+    //.hero-game-image {
+    //  img {
+    //    transform: translateX(40px);
+    //  }
+    //}
+    //.hero-game-image-content::before,
     .hero-game-image::before {
       background: rgba(#1E1F23,.5);
       background: linear-gradient(0deg, rgba(#1E1F23,1) 0%, rgba(#232126,0.64) 30%, rgba(#000000,0) 100%);
@@ -466,6 +538,12 @@
     }
   }
   &-pubg {
+    //.hero-game-image {
+    //  img {
+    //    transform: translateX(55px);
+    //  }
+    //}
+    //.hero-game-image-content::before,
     .hero-game-image::before {
       background: rgba(#D44F00,.5);
       background: linear-gradient(0deg, rgba(#D44F00,1) 0%, rgba(#646263,0) 100%);
@@ -477,6 +555,7 @@
     }
   }
   &-valorant {
+    //.hero-game-image-content::before,
     .hero-game-image::before {
       background: rgba(#ED143F,.5);
       background: linear-gradient(0deg, rgba(#ED143F,1) 0%, rgba(#646263,0) 100%);
@@ -488,6 +567,12 @@
     }
   }
   &-rainbow {
+    //.hero-game-image {
+    //  img {
+    //    transform: translateX(-35px);
+    //  }
+    //}
+    //.hero-game-image-content::before,
     .hero-game-image::before {
       background: rgba(#070707,.5);
       background: linear-gradient(0deg, rgba(#070707,1) 0%, rgba(#646263,0) 100%);
@@ -557,6 +642,8 @@
 .twitch {
   margin-bottom: 90px;
   max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .twitch-stream {
@@ -618,6 +705,8 @@
         font-weight: 700;
         text-transform: uppercase;
         margin-top: 13px;
+        display: flex;
+        flex-wrap: wrap;
       }
     }
     .twitch-stream-info {
@@ -653,6 +742,19 @@
       color: $green;
     }
   }
+  .countdown-title {
+    & + .countdown {
+      padding-left: 5px;
+    }
+  }
+  .countdown {
+    display: flex;
+    div {
+      & + div {
+        //padding-left: 4px;
+      }
+    }
+  }
 
   &:hover {
     .twitch-stream-overlay {
@@ -677,7 +779,10 @@
       color: $pugb;
     }
     .status {
-      span {
+      &.started {
+        color: $pugb;
+      }
+      .countdown {
         color: $pugb;
       }
     }
@@ -688,7 +793,10 @@
       color: $green;
     }
     .status {
-      span {
+      &.started {
+        color: $green;
+      }
+      .countdown {
         color: $green;
       }
     }
@@ -707,17 +815,24 @@
       color: #F3A94E;
     }
     .status {
-      span {
+      &.started {
+        color: #F3A94E;
+      }
+      .countdown {
         color: #F3A94E;
       }
     }
   }
   &-valorant {
+
     .time {
       color: $valorant;
     }
     .status {
-      span {
+      &.started {
+        color: $valorant;
+      }
+      .countdown {
         color: $valorant;
       }
     }
@@ -766,6 +881,9 @@
       & + span {
         padding-left: 20px;
         border-left: 1px #fff solid;
+      }
+      &:last-child {
+        padding-right: 0;
       }
     }
   }
@@ -934,6 +1052,7 @@
     display: flex;
     max-width: calc(50% - 30px);
     align-items: center;
+    background: $matte;
     box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
   }
   .col-feature-image {
@@ -979,13 +1098,28 @@
     }
     .platform-list {
       margin-top: 44px;
+      margin-bottom: 30px;
       margin-left: -17px;
       margin-right: -17px;
       .platform-item {
         padding-left: 17px;
         padding-right: 17px;
+        //line-height: 1;
+        display: flex;
+        align-items: center;
+        height: 50px;
         [class*='icon'] {
           font-size: 27px;
+          opacity: 1;
+          line-height: 30px;
+          height: auto;
+        }
+        .icon-pc {
+          font-size: 30px;
+        }
+        .icon-xbox {
+          font-size: 25px;
+          transform: translateY(2px);
         }
 
       }
@@ -999,6 +1133,7 @@
     padding: 0 30px;
   }
 }
+
 .hero-tournament-title {
   display: flex;
   flex-direction: column;
@@ -1039,6 +1174,16 @@
     &__dota {
       img {
         width: 315px;
+      }
+    }
+    &__pubg {
+      img {
+        width: 315px;
+      }
+    }
+    &__rainbow {
+      img {
+        width: 325px;
       }
     }
   }
@@ -1415,9 +1560,11 @@
 .row-match-maps {
   margin-left: -30px;
   margin-right: -30px;
+  justify-content: center;
   .col-match-map {
     padding-left: 30px;
     padding-right: 30px;
+    margin-bottom: 50px;
   }
 }
 .match-map {
