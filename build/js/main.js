@@ -140,9 +140,11 @@
         });
         var newsSlider = new Swiper('.news-slider', {
             slidesPerView: 'auto',
-            spaceBetween: 40,
+            spaceBetween: 30,
             freeMode: true,
             pagination: false,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -153,11 +155,12 @@
             breakpoints: {
                 1025: {
                     slidesPerView: 'auto',
+                    spaceBetween: 30,
                 },
-                1200: {
+                1400: {
                     slidesPerView: 4,
                     spaceBetween: 60,
-                },
+                }
             }
         });
         var heroGameSlider = new Swiper('.mobileHeroGameList-slider', {
@@ -173,7 +176,8 @@
             breakpoints: {
                 1025: {
                     init: false,
-                    mousewheel: false
+                    mousewheel: false,
+                    spaceBetween: 0,
                 },
             }
         });
@@ -196,6 +200,39 @@
                 forceToAxis: true,
             }
         });
+
+
+        //--------- TEAM SLIDER DESTROY -------//
+        $(window).on('resize load',function () {
+            if($(window).width() < 1025) {
+                if ( teamSlider !== undefined ) {
+
+                    teamSlider.destroy( true, true );
+                    teamSlider = undefined;
+                    // console.log(teamSlider);
+                }
+            } else {
+
+                console.log(teamSlider);
+                if ( teamSlider == undefined) {
+                    teamSlider = new Swiper('.team-slider', {
+                        slidesPerView: 'auto',
+                        spaceBetween: 60,
+                        freeMode: true,
+                        pagination: false,
+                        mousewheel: {
+                            forceToAxis: true,
+                        },
+                        navigation: {
+                            nextEl: '.team-slider-next',
+                            prevEl: '.team-slider-prev',
+                        }
+                    });
+                }
+            }
+
+        });
+
 
         //--------- TIMER INIT ----------//
         if($('*').is('.countdown')) {

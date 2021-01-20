@@ -171,7 +171,9 @@
     }
   }
   .slider-wrapper {
-    display: none;
+    @media  (max-width: 1025px){
+      display: none;
+    }
   }
 }
 .section-channels {
@@ -239,6 +241,10 @@
       position: absolute;
       left: 0;
       top: 0;
+    }
+    @media (max-width: 1025px) {
+      min-height: calc(100vh - 111px);
+      padding: 100px 0 240px 0;
     }
   }
   .container {
@@ -340,6 +346,12 @@
   }
   & + .section-game-competition {
     margin-top: -430px;
+    @media (max-width: 1025px) {
+      //display: none;
+      margin-top: -203px;
+      position: relative;
+      z-index: 2;
+    }
     .section-inner {
       padding-top: 0;
     }
@@ -355,7 +367,15 @@
   .section-title {
     //margin-bottom: 100px;
   }
-
+  @media (max-width: 1025px) {
+    .button-group,
+    .competition-slider {
+      display: none;
+    }
+    .section-title {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .section-support {
@@ -464,7 +484,7 @@
 }
 
 .section-watch-now {
-  display: none;
+  //display: none;
   .section-title {
     margin-bottom: 5px;
   }
@@ -476,6 +496,18 @@
     margin-top: 54px;
     .btn {
       width: 100%;
+    }
+  }
+}
+
+.section-team {
+
+  @media (max-width: 1025px) {
+    .swiper-navigation {
+      display: none;
+    }
+    .slider-wrapper {
+      width: 100% !important;
     }
   }
 }

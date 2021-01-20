@@ -6,8 +6,10 @@
   width: 100%;
   @media (max-width: 1025px) {
     transition: all 400ms;
+    border-bottom: 2px solid transparent;
   }
   &.open-menu-header {
+    border-color: $green;
     //transform: translateY(-58px);
   }
   &::before {

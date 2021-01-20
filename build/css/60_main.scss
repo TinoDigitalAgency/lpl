@@ -951,6 +951,7 @@ main.main-content {
     @media (max-width: 1025px) {
       height: 447px;
       width: 100%;
+      border: 2px $white solid;
     }
    img {
      width: 100%;
@@ -989,7 +990,7 @@ main.main-content {
       padding-right: 20px;
       padding-top: 12px;
       padding-bottom: 11px;
-      @media (max-width: 1300px) {
+      @media (max-width: 1500px) {
         font-size: 15px;
       }
       & + span {
@@ -1008,6 +1009,10 @@ main.main-content {
       font-size: 25px;
 
     }
+  }
+  p {
+    //display: none;
+
   }
   &:hover {
     .news-image {
@@ -1095,6 +1100,11 @@ main.main-content {
 .team-block {
   padding: 44px 14px;
   box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.71);
+  @media (max-width: 1025px) {
+    box-shadow: none;
+    border: 1px #45D88B solid;
+    padding: 40px 5px 0 5px;
+  }
   .team-logo {
     height: 210px;
     width: 100%;
@@ -1118,6 +1128,9 @@ main.main-content {
   }
   p {
     font-size: 17px;
+    @media (max-width: 1025px) {
+      font-size: 15px;
+    }
     & +p {
       margin-top: 27px;
     }
@@ -1127,6 +1140,13 @@ main.main-content {
   }
   .btn-tab {
     padding: 14px 44px 12px 44px;
+  }
+  .btn {
+    background: #2ED88B;
+    border-color: #2ED88B;
+    width: calc(100% + 12px);
+    margin-left: -6px;
+    margin-bottom: -1px;
   }
 }
 
@@ -2199,7 +2219,30 @@ main.main-content {
 }
 .show-on-mobile {
   display: none;
-  @media (max-width: 1300px) {
+  @media (max-width: 1025px) {
     display: block;
+  }
+}
+.mobile-competition-col {
+  margin-bottom: 40px;
+}
+
+
+.col-leaderboard {
+  @media (max-width: 1500px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    .competition-table-wrapper {
+      max-width: 100%;
+    }
+    & + .col-leaderboard {
+      margin-top: 50px;
+    }
+  }
+}
+.hide-on-mobile {
+  @media (max-width: 1025px) {
+    display: none;
   }
 }
