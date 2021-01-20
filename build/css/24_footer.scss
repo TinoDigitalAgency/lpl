@@ -5,6 +5,11 @@
   padding-top: 110px;
   padding-left: 30px;
   padding-right: 30px;
+  @media (max-width: 1200px) {
+    border-top: 3px #2ED88B solid;
+    padding: 86px 30px 80px 30px;
+    background: $matte;
+  }
   .footer-inner {
     flex: 0 0 100%;
     max-width: 1680px;
@@ -12,10 +17,18 @@
     box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.71);
     border-left: 12px $green solid;
     padding: 65px 100px;
+    @media (max-width: 1200px) {
+      border-left: none;
+      box-shadow: none;
+      max-width: 930px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 30px;
+    }
   }
   .footer-col {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 
   }
   .social {
@@ -23,28 +36,49 @@
     li {
       margin-right: 36px;
       margin-bottom: 40px;
+      @media (max-width: 1300px) {
+        margin-right: 0;
+      }
     }
   }
   .footer-logo {
     margin-bottom: 70px;
+    @media (max-width: 1200px) {
+      margin-bottom: 100px;
+
+    }
   }
   .footer-col-logo {
     flex: 0 0 20%;
     max-width: 20%;
+    @media (max-width: 1200px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      .social {
+        display: none;
+      }
+    }
   }
   .footer-col-menus {
     flex: 0 0 80%;
     max-width: 80%;
+    @media (max-width: 1200px) {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 100%;
+    }
     .row {
       //display: flex;
       justify-content: space-between;
     }
   }
   .footer-col-menu {
-    flex:  0 0 20%;
-    max-width: 20%;
-    padding-left: 15px;
-    padding-right: 15px;
+    flex:  0 0 25%;
+    max-width: 25%;
+    padding-left: 20px;
+    padding-right: 20px;
     h4 {
       margin-bottom: 30px;
       color: $white;
@@ -60,6 +94,9 @@
         font-weight: 400;
         color: $white;
         text-transform: uppercase;
+        @media (max-width: 1700px) {
+          font-size: 16px;
+        }
         &:hover {
           color: $green;
         }
@@ -74,14 +111,71 @@
     max-width: 50%;
     padding-left: 15px;
     padding-right: 15px;
+    @media (max-width: 1200px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+
     p {
       text-transform: uppercase;
+      @media (max-width: 1400px) {
+        font-size: 16px;
+      }
       a {
         color: #6477BE;
         font-weight: 400;
+        @media (max-width: 1400px) {
+          font-size: 16px;
+        }
         &:hover {
           color: $green;
         }
+      }
+    }
+  }
+  .footer-col-social-mobile {
+    @media(min-width: 1200px)  {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 60px;
+    .social {
+      max-width: 190px;
+      li {
+        flex: 0 0 33.333%;
+        width: 33.3333%;
+        max-width: 33.3333%;
+        margin-bottom: 20px;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .icon-fb {
+        font-size: 35px;
+      }
+      .icon-twitter {
+        font-size: 35px;
+      }
+      .icon-twitch {
+        font-size: 36px;
+      }
+      .icon-youtube {
+        font-size: 38px;
+      }
+      .icon-instagram {
+        font-size: 33px;
+      }
+      .icon-discord {
+        font-size: 35px;
       }
     }
   }
@@ -91,7 +185,17 @@
     max-width: 50%;
     padding-left: 15px;
     padding-right: 15px;
+    @media (max-width: 1200px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+      margin-top: 4px;
+    }
     .copy {
+      @media (max-width: 1400px) {
+        font-size: 16px;
+      }
       text-transform: uppercase;
       color: $white
     }
@@ -109,12 +213,21 @@
   display: flex;
   flex-wrap: wrap;
   li {
+    @media (max-width: 1300px) {
+      flex: 0 0 50%;
+      width: 50%;
+      max-width: 50%;
+    }
     a {
       display: flex;
       align-items: center;
       color: $white;
       width: 46px;
       height: 46px;
+      @media (max-width: 1200px) {
+        width: 100%;
+        text-align: center;
+      }
       &:hover {
         color: $green;
       }
@@ -122,20 +235,38 @@
   }
   .icon-fb {
     font-size: 38px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
   .icon-twitter {
     font-size: 46px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
   .icon-twitch {
     font-size: 38px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
   .icon-youtube {
     font-size: 46px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
   .icon-discord {
     font-size: 46px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
   .icon-instagram {
     font-size: 36px;
+    @media (max-width: 1200px) {
+      font-size: 30px;
+    }
   }
 }

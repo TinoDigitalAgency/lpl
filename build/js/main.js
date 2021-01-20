@@ -11,6 +11,18 @@
                 'width': $(window).width() - $('.slider-wrapper').offset().left
             });
         }
+        if($('div').is('.news-slider-wrapper')) {
+            if($(window).width() < 1025) {
+                $('.news-slider-wrapper').css({
+                    'width': $(window).width() - $('.news-slider-wrapper').offset().left
+                });
+            } else {
+                $('.news-slider-wrapper').css({
+                    'width': '100%'
+                });
+            }
+
+        }
     });
     //---------- HERO GAME HOVER ----------//
         var parentWidth,
@@ -127,8 +139,8 @@
             }
         });
         var newsSlider = new Swiper('.news-slider', {
-            slidesPerView: 4,
-            spaceBetween: 60,
+            slidesPerView: 'auto',
+            spaceBetween: 40,
             freeMode: true,
             pagination: false,
             mousewheel: {
@@ -137,6 +149,51 @@
             navigation: {
                 nextEl: '.news-slider-wrapper .news-slider-next',
                 prevEl: '.news-slider-wrapper .news-slider-prev',
+            },
+            breakpoints: {
+                1025: {
+                    slidesPerView: 'auto',
+                },
+                1200: {
+                    slidesPerView: 4,
+                    spaceBetween: 60,
+                },
+            }
+        });
+        var heroGameSlider = new Swiper('.mobileHeroGameList-slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 22,
+            freeMode: true,
+            init: true,
+            observer: true,
+            observeParents: true,
+            mousewheel: {
+                forceToAxis: true,
+            },
+            breakpoints: {
+                1025: {
+                    init: false,
+                    mousewheel: false
+                },
+            }
+        });
+        var competitionMobileSlider = new Swiper('.competition-mobile-slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 39,
+            freeMode: true,
+            mousewheel: {
+                forceToAxis: true,
+            }
+        });
+        // competitionMobileSlider.update();
+        var newsnMobileSlider = new Swiper('.news-mobile-slider', {
+            slidesPerView: 'auto',
+            spaceBetween: 39,
+            freeMode: true,
+            observer: true,
+            observeParents: true,
+            mousewheel: {
+                forceToAxis: true,
             }
         });
 
@@ -164,6 +221,37 @@
             });
             // console.log('Has Contdown')
         }
+
+        //-------- Menu Trigger -------//
+        $('.menu-trigger').on('click', function (e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            $('.header-wrapper').toggleClass('open-menu-header');
+            $('body').toggleClass('overflow-hidden');
+
+            if($('div').is('.marquee-text') && $(window).scrollTop() < 58) {
+                if($(this).hasClass('active')) {
+                    $('.header-wrapper').css({
+                        'transform': 'translateY(-'+ (58-$(window).scrollTop())+'px)'
+                    })
+                } else {
+                    $('.header-wrapper').css({
+                        'transform': 'translateY(0px)'
+                    })
+                }
+
+            }
+            if($('.mobile-menu-wrapper').hasClass('open-menu')) {
+                $('.mobile-menu-wrapper').stop().fadeOut(500);
+                setTimeout(function () {
+                    $('.mobile-menu-wrapper').removeClass('open-menu')
+                },500);
+            } else {
+                $('.mobile-menu-wrapper').show().addClass('open-menu');
+            }
+
+        });
+
 
 
 

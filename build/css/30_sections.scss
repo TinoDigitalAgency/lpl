@@ -8,16 +8,25 @@
   .section-inner {
     padding-top: 106px;
     padding-bottom: 0px;
+    @media (max-width: 1025px) {
+      padding-bottom: 50px;
+    }
   }
   .h1 {
     text-transform: uppercase;
     margin-bottom: 27px;
+    @media (max-width: 1025px) {
+      margin-bottom: 19px;
+    }
     .small {
       display: block;
       font-size: 38px;
       line-height: 43px;
       color: $green;
       font-weight: 400;
+      @media (max-width: 1025px) {
+        font-size: 36px;
+      }
     }
   }
   .button-group {
@@ -25,6 +34,9 @@
   }
   .hero-game-list {
     margin-top: 100px;
+    @media (max-width: 1025px) {
+      margin-top: 115px;
+    }
   }
 }
 .section-hero-tournament {
@@ -115,15 +127,57 @@
   .platform-block {
     margin-bottom: 65px;
   }
+  .section-title {
+    @media (max-width: 1025px) {
+      margin-bottom: 23px;
+      align-items: flex-start;
+      .h2 {
+        text-align: left;
+      }
+    }
+
+    p {
+
+      @media (max-width: 1025px) {
+        display: none;
+      }
+    }
+  }
+  .slider-wrapper {
+    @media (max-width: 1025px) {
+      display: none;
+    }
+  }
 }
 
 
 .section-twitch {
+  @media  (max-width: 1025px){
+    display: none;
+  }
   .section-title {
     //margin-bottom: 80px;
+    @media  (max-width: 1025px){
+      margin-bottom: 5px;
+      .h2 {
+
+      }
+    }
+    p {
+      @media  (max-width: 1025px){
+        //display: none;
+      }
+
+    }
+  }
+  .slider-wrapper {
+    display: none;
   }
 }
 .section-channels {
+  @media (max-width: 1025px) {
+    display: none;
+  }
   .section-title {
     //margin-bottom: 100px;
   }
@@ -133,6 +187,9 @@
 }
 
 .section-announcement {
+  @media (max-width: 1025px) {
+    display: none;
+  }
   .section-title {
     //margin-bottom: 100px;
   }
@@ -145,12 +202,21 @@
   }
   .button-group {
     margin-top: 40px;
+    @media (max-width: 1025px) {
+      .btn {
+        width: 100%;
+      }
+    }
   }
 }
 
 .section-partner {
   .h4 {
     margin-bottom: 25px;
+    @media (max-width: 1025px) {
+      text-align: left;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -392,4 +458,24 @@
    text-transform: uppercase;
    margin-bottom: 70px;
  }
+}
+.watch-block {
+  margin-top: 57px;
+}
+
+.section-watch-now {
+  display: none;
+  .section-title {
+    margin-bottom: 5px;
+  }
+  @media (max-width: 1025px) {
+    display: block;
+  }
+  .button-group {
+    flex: 0 0 100%;
+    margin-top: 54px;
+    .btn {
+      width: 100%;
+    }
+  }
 }

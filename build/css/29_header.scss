@@ -2,7 +2,14 @@
   position: sticky;
   left: 0;
   top: 0;
-  z-index: 8;
+  z-index: 200;
+  width: 100%;
+  @media (max-width: 1025px) {
+    transition: all 400ms;
+  }
+  &.open-menu-header {
+    //transform: translateY(-58px);
+  }
   &::before {
     content: '';
     width: 100%;
@@ -29,6 +36,10 @@
     font-weight: 700;
     line-height: 35px;
     color: $white;
+    @media (max-width: 1025px) {
+      font-size: 30px;
+      line-height: 43px;
+    }
     img {
       max-width: 151px;
     }
@@ -36,11 +47,22 @@
   .col-menu {
     flex: 0 0 calc(100% - 448px);
     max-width: calc(100% - 448px);
+    @media (max-width: 1025px) {
+      display: none;
+    }
   }
   .col-logo,
   .col-button {
     flex: 0 0 224px;
     position: relative;
+    @media (max-width: 1025px) {
+      .btn {
+        display: none;
+      }
+    }
+  }
+  .col-button {
+    min-height: 43px;
   }
 
   .search-block {
@@ -48,6 +70,10 @@
     left: 100%;
     top: 50%;
     transform: translateY(-50%);
+    @media (max-width: 1025px) {
+      left: auto;
+      right: 0;
+    }
     .header-search {
       position: absolute;
       right: 0;
@@ -70,6 +96,11 @@
       width: 62px;
       height: 62px;
       transition: all 400ms;
+      @media (max-width: 1025px) {
+        font-size: 29px;
+        width: 43px;
+        height: 43px;
+      }
       &:hover {
         color: $green;
       }
@@ -167,6 +198,12 @@
     @media (max-width: 1850px) {
       padding-right: 100px;
     }
+    @media (max-width: 1025px) {
+      padding-left: 45px;
+      padding-right: 65px;
+      padding-top: 33px;
+      padding-bottom: 33px;
+    }
   }
 
   .submenu {
@@ -219,6 +256,9 @@
   .main-menu-item {
     & + .main-menu-item {
       margin-left: 50px;
+      @media (max-width: 1300px) {
+        margin-left: 0;
+      }
     }
 
   }
@@ -229,6 +269,10 @@
     line-height: 22px;
     color: $white;
     transition: all 400ms;
+    @media (max-width: 1200px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
     &:hover {
       color: $green;
     }
@@ -261,6 +305,150 @@
         top: 50%;
         margin-top: -2.5px;
         transition: all 400ms;
+      }
+    }
+  }
+}
+
+.menu-trigger {
+  display: none;
+  position: fixed;
+  right: 48px;
+  bottom: 48px;
+  z-index: 200;
+  width: 68px;
+  height: 68px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #2ED88B;
+  &:focus {
+    outline: none;
+  }
+  span {
+    width: 28px;
+    height: 3px;
+    display: block;
+    background: $matte;
+    position: absolute;
+    left: 50%;
+
+    margin-top: -1.5px;
+    margin-left: -14px;
+    transition: all 400ms;
+    &:nth-child(1) {
+      top: calc(50% - 9px);
+    }
+    &:nth-child(2) {
+      top: 50%;
+    }
+    &:nth-child(3) {
+      top: calc(50% + 9px);
+    }
+  }
+  &.active {
+    span {
+      &:nth-child(1) {
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: 50%;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  @media (max-width: 1025px) {
+    display: block;
+
+  }
+}
+
+.mobile-menu-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 199;
+  display: none;
+  pointer-events: none;
+  //display: none;
+  &.open-menu {
+    pointer-events: auto;
+    .mobile-menu-inner {
+      animation: 1s bounceInDown forwards;
+      animation-delay: 100ms;
+    }
+  }
+  .mobile-menu-inner {
+    width: 100%;
+    height: 100vh;
+    background: $matte;
+    position: relative;
+    transform: translateY(-2000px);
+    //padding-top: 160px;
+    //padding-bottom: 100px;
+  }
+  .mobile-menu-content {
+    height: 100vh;
+  }
+  .button-group {
+    padding: 160px 45px 54px 45px;
+    .btn {
+      width: 100%;
+      & + .btn {
+        margin-top: 17px;
+      }
+    }
+  }
+  .btn-signin {
+    background: $matte;
+    color: $white;
+    &:hover {
+      background: $white;
+      color: $matte;
+    }
+  }
+  .mobile-menu {
+    //padding-bottom: 100px;
+    padding: 43px 48px 68px 48px;
+    li {
+      & + li {
+        margin-top: 46px;
+      }
+      a {
+        display: block;
+        font-size: 48px;
+        line-height: 85px;
+        color: $white;
+      }
+    }
+  }
+  .mCSB_inside>.mCSB_container {
+    margin-right: 0;
+  }
+  .mCSB_scrollTools {
+    z-index: 2;
+  }
+  .mobileHeroGameList-slider {
+    width: 100%;
+
+  }
+  .bottom-button {
+    padding-bottom: 200px;
+    padding-left: 48px;
+    padding-right: 48px;
+    .btn {
+      width: 100%;
+      background: $matte;
+      color: $white;
+      &:hover {
+        background: $white;
+        color: $matte;
       }
     }
   }

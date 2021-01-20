@@ -32,6 +32,9 @@
 .btn-slider-nav-next,
 .swiper-button-next {
   right: 53px;
+  @media (max-width: 1200px) {
+    right: 12px;
+  }
 }
 .btn-slider-nav,
 .swiper-button-prev,
@@ -136,5 +139,22 @@
     &.news-slider-next {
       right: -70px;
     }
+  }
+}
+.news-slider {
+  .swiper-slide {
+    width: 447px;
+  }
+}
+
+.mobileHeroGameList-slider {
+  padding: 0 45px;
+}
+
+.competition-mobile-slider {
+  padding-left: 45px;
+  padding-right: 45px;
+  .swiper-slide {
+    width: 447px;
   }
 }
