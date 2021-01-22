@@ -123,6 +123,9 @@ body {
     @media (max-width: 1500px) {
       display: block;
     }
+    @media (max-width: 767px) {
+      max-width: 100%;
+    }
   }
   .mobile-view {
     @media (max-width: 1500px) {
@@ -282,6 +285,14 @@ body {
 .competition-table {
   display: table;
   width: 100%;
+  @media (max-width: 767px) {
+    display: block;
+    .competition-table {
+      display: table;
+      min-width: 420px;
+      overflow-x: auto;
+    }
+  }
   &-tr {
     display: table-row;
     &:nth-child(odd) {
@@ -313,11 +324,21 @@ body {
     color: $white;
     text-transform: uppercase;
     padding: 11px 15px;
+    @media (max-width: 767px) {
+      padding-left: 15px;
+    }
     &:first-child {
       padding-left: 50px;
+      @media (max-width: 767px) {
+        padding-left: 15px;
+      }
     }
     &:last-child {
+
       padding-right: 50px;
+      @media (max-width: 767px) {
+        padding-left: 15px;
+      }
     }
   }
   &-head {
@@ -346,8 +367,16 @@ body {
     align-items: center;
     justify-content: center;
     margin-left: 16px;
+    @media (max-width: 767px) {
+      margin-left: 0;
+    }
   }
   &__green {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #2ED88B;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #2ED88B;
     }
@@ -367,6 +396,11 @@ body {
     }
   }
   &__yellow {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #FAF84B;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #FAF84B;
     }
@@ -392,6 +426,11 @@ body {
     }
   }
   &__pink {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #FF00A8;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #FF00A8;
     }
@@ -403,6 +442,11 @@ body {
     }
   }
   &__dota {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #49A979;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #49A979;
     }
@@ -411,6 +455,11 @@ body {
     }
   }
   &__csgo {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #E26D38;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #E26D38;
     }
@@ -438,6 +487,12 @@ body {
     .custom-dropdown.custom-dropdown--open .dropdown-trigger,
     .custom-dropdown .dropdown-menu .dropdown-menu-item.active {
       background: #00FFEF;
+      color: $matte;
+    }
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #00FFEF;
+      }
     }
   }
   &__pubg {
@@ -450,8 +505,18 @@ body {
     .scroll-content .competition-table-head {
       background: #B75012;
     }
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #B75012;
+      }
+    }
   }
   &__valorant {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: #F22347;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: #F22347;
     }
@@ -463,6 +528,11 @@ body {
     }
   }
   &__rainbow {
+    .tab-wrapper .tab-menu .tab-trigger.active {
+      @media (max-width: 767px) {
+        color: $white;
+      }
+    }
     .tab-wrapper .tab-menu .tab-trigger span::before {
       background: $white;
     }
@@ -507,7 +577,24 @@ body {
     }
     .platform-type {
       margin-top: 50px;
+      @media (max-width: 767px) {
+        margin-top: 17px;
+        
+      }
     }
+  }
+  &__right {
+    .mCSB_container {
+      @media (max-width: 767px) {
+        overflow-x: auto;
+      }
+    }
+    .scroll-content {
+      @media (max-width: 575px) {
+        padding-right: 0;
+      }
+    }
+
   }
   &__center,
   &__right {
@@ -520,10 +607,14 @@ body {
       padding: 43px 0 48px;
       text-transform: uppercase;
       text-align: center;
+      @media (max-width: 767px) {
+        padding: 27px 0 27px;
+      }
     }
     .scroll-content {
       height: 560px;
       padding: 0 20px 20px 20px;
+
     }
   }
 
@@ -550,6 +641,10 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 767px) {
+          font-size: 18px;
+          line-height: 25px;
+        }
         .position {
           width: 32px;
           height: 32px;
@@ -560,6 +655,14 @@ body {
           font-weight: 700;
           text-align: center;
           color: $matte;
+          @media (max-width: 767px) {
+            font-size: 10px;
+            line-height: 22px;
+            font-weight: 400;
+            width: 22px;
+            height: 22px;
+            margin-right: 13px;
+          }
           &-first {
             background: $gold;
           }
@@ -593,6 +696,20 @@ body {
         text-align: left;
         .h4 {
           margin-bottom: 44px;
+          @media (max-width: 767px) {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 17px;
+          }
+        }
+        p {
+          @media (max-width: 767px) {
+            font-size: 13px;
+            line-height: 19px;
+            & + p {
+              margin-top: 12px;
+            }
+          }
         }
         .child-tab-inner {
           display: flex;
@@ -600,11 +717,21 @@ body {
           @media (max-width: 1025px) {
             padding-left: 78px;
           }
+          @media (max-width: 767px) {
+            flex-wrap: wrap;
+            padding-left: 35px;
+            padding-right: 30px;
+            padding-top: 25px;
+            .competition-tab-content-info {
+              flex: 0 0 100%;
+            }
+          }
         }
       }
       .prize-info {
         margin-top: 0;
         text-align: right;
+        
       }
       .prize-info-place {
         margin-top: 60px;
@@ -621,6 +748,28 @@ body {
       }
     }
   }
+  @media (max-width: 767px) {
+    .child-tab .prize-info {
+      text-align: left;
+      margin-top: 35px;
+      .prize-info-title {
+        font-size: 12px;
+        line-height: 17px;
+        margin-bottom: 0;
+      }
+      .prize-info-total {
+        font-size: 28px;
+        line-height: 39px;
+        margin-bottom: 10px;
+      }
+      .prize-info-place {
+        margin-top: 0;
+        .prize-info-position {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
 }
 
 
@@ -631,6 +780,9 @@ body {
   margin-left: -15px;
   margin-right: -15px;
   justify-content: center;
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+  }
   .platform-type-item {
     padding-left: 15px;
     padding-right: 15px;
@@ -644,12 +796,20 @@ body {
       color: $white;
       opacity: .1;
       transition: all 400ms;
+      @media (max-width: 767px) {
+        font-size: 27px;
+        width: 25px;
+        height: 35px;
+      }
       &.active,
       &:hover {
         opacity: 1;
       }
       .icon-ps {
         font-size: 48px;
+        @media (max-width: 767px) {
+          font-size: 33px;
+        }
       }
     }
 
@@ -707,9 +867,15 @@ body {
         color: $matte;
         &:first-child {
           padding-left: 35px;
+          @media (max-width: 767px) {
+            padding-left: 15px;
+          }
         }
         &:last-child {
           padding-right: 35px;
+          @media (max-width: 767px) {
+            padding-right: 15px;
+          }
         }
       }
     }
@@ -718,11 +884,20 @@ body {
       line-height: 19px;
       padding: 11px 15px 10px 15px;
       vertical-align: middle;
+      @media (max-width: 767px) {
+        font-size: 12px;
+      }
       &:first-child {
         padding-left: 35px;
+        @media (max-width: 767px) {
+          padding-left: 15px;
+        }
       }
       &:last-child {
         padding-right: 35px;
+        @media (max-width: 767px) {
+          padding-right: 15px;
+        }
       }
     }
     &-tr {
@@ -763,6 +938,10 @@ body {
       justify-content: space-between;
       position: relative;
       z-index: 22;
+      @media (max-width: 767px) {
+        border-bottom-width: 2px;
+        //padding-bottom: 0;
+      }
       .tab-menu-mobile-item {
         &:not(.show) {
           display: none;
@@ -800,6 +979,43 @@ body {
   @media (min-width: 1500px) {
     .child-tab {
       display: block !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .tab-menu-mobile-wrapper {
+      flex-direction: column-reverse;
+      padding: 27px 0px 0 0;
+      .child-menu {
+        flex: 0 0 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 13px;
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none;
+        overflow-x: auto;
+        max-width: 100%;
+        &::-webkit-scrollbar { width: 0; }
+      }
+      .parent-tab-dropdown {
+        flex: 0 0 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-bottom: 2px #000000 solid;
+        padding-bottom: 27px;
+      }
+      .dropdown-trigger {
+        width: 100%;
+      }
+    }
+    .tab-wrapper__hero .tab-menu .tab-trigger {
+      font-size: 14px;
+      padding: 0 27px;
+      span {
+        padding: 0;
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -1504,6 +1504,10 @@ main.main-content {
       font-size: 68px;
       line-height: 72px;
     }
+    @media (max-width: 767px) {
+      font-size: 36px;
+      line-height: 38px;
+    }
   }
 
   .prize-block {
@@ -1517,16 +1521,28 @@ main.main-content {
       line-height: 29px;
       margin-top: 28px;
     }
+    @media (max-width: 767px) {
+      font-size: 19px;
+      line-height: 23px;
+      margin-top: 36px;
+    }
     .prize {
       font-size: 85px;
       font-weight: 700;
       color: $white;
       line-height: 90px;
+
     }
     @media (max-width: 1025px) {
       .prize {
         font-size: 61px;
         line-height: 65px;
+      }
+    }
+    @media (max-width: 767px) {
+      .prize {
+        font-size: 32px;
+        line-height: 52px;
       }
     }
   }
@@ -1550,9 +1566,20 @@ main.main-content {
   .game-logo {
     max-width: 100%;
     margin-bottom: 62px;
+    @media (max-width: 767px) {
+      margin-bottom: 35px;
+    }
+    img {
+      @media (max-width: 767px) {
+        width: 185px;
+      }
+    }
     &__dota {
       img {
         width: 315px;
+        @media (max-width: 767px) {
+          width: 185px;
+        }
       }
     }
     &__pubg {
@@ -1588,6 +1615,16 @@ main.main-content {
 
     }
   }
+  @media (max-width: 767px) {
+    margin-top: 35px;
+    .col-info-block {
+      padding-left: 30px;
+      padding-right: 30px;
+      & + .col-info-block {
+        margin-top: 50px;
+      }
+    }
+  }
 }
 .info-block {
   box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.16);
@@ -1604,6 +1641,9 @@ main.main-content {
       line-height: 22px;
     }
   }
+  @media (max-width: 767px) {
+    padding: 0 0 0 5px;
+  }
   .h4 {
     text-align: center;
     margin-bottom: 55px;
@@ -1611,11 +1651,19 @@ main.main-content {
       text-align: left;
       margin-bottom: 24px;
     }
+    @media (max-width: 767px) {
+      font-size: 21px;
+      line-height: 29px;
+      margin-bottom: 22px;
+    }
   }
   .content {
     .button-group {
       @media (max-width: 1025px) {
         margin-top: 61px;
+      }
+      @media (max-width: 767px) {
+        margin-top: 25px;
       }
       .btn {
         width: 100%;
@@ -1624,6 +1672,9 @@ main.main-content {
           margin-top: 20px;
           background: $matte;
           color: $white;
+          @media (max-width: 767px) {
+            margin-top: 14px;
+          }
           &:hover {
             background: $white;
             color: $matte;
@@ -1639,26 +1690,52 @@ main.main-content {
       position: relative;
       left: -30px;
     }
+    @media (max-width: 767px) {
+      width: 100%;
+      left: 0;
+    }
   }
 }
 .content {
   ol {
     padding-left: 20px;
     margin-bottom: 0;
+    @media (max-width: 767px) {
+      padding-left: 15px;
+    }
     li {
       line-height: 22px;
       & + li {
         margin-top: 14px;
+        @media (max-width: 767px) {
+          margin-top: 10px;
+        }
+      }
+      @media (max-width: 767px) {
+        font-size: 14px;
+        line-height: 27px;
       }
     }
     & + p {
       margin-top: 26px;
+      @media (max-width: 767px) {
+        margin-top: 10px;
+      }
     }
   }
+
   p {
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 27px;
+    }
     margin: 0;
      & + p {
        margin-top: 26px;
+       @media (max-width: 767px) {
+         margin-top: 10px;
+       }
+
      }
   }
   .button-group {
@@ -1689,6 +1766,19 @@ main.main-content {
         }
       }
     }
+    @media (max-width: 767px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      display: flex;
+      justify-content: center;
+      & + .col {
+        margin-top: 33px;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
   }
 }
 .support-link {
@@ -1745,6 +1835,11 @@ main.main-content {
       font-size: 44px;
       line-height: 46px;
     }
+    @media (max-width: 767px) {
+      font-size: 35px;
+      line-height: 49px;
+      margin-bottom: 12px;
+    }
   }
   &__date {
     font-size: 21px ;
@@ -1753,7 +1848,11 @@ main.main-content {
       font-size: 27px;
       line-height: 30px;
     }
-
+    @media (max-width: 767px) {
+      font-size: 11px;
+      line-height: 16px;
+      //margin-bottom: 12px;
+    }
   }
   &__team-score {
     display: flex;
@@ -1807,6 +1906,11 @@ main.main-content {
             font-weight: 500;
             line-height: 64px;
           }
+          @media (max-width: 767px) {
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 38px;
+          }
           .winner {
             position: absolute;
             left: 50%;
@@ -1829,7 +1933,14 @@ main.main-content {
             font-size: 84px;
             line-height: 84px;
             width: 100px;
-            max-width: 100px
+            max-width: 100px;
+            text-align: center;
+          }
+          @media (max-width: 767px) {
+            font-size: 28px;
+            line-height: 38px;
+            width: 25px;
+            text-align: center;
           }
         }
       }
@@ -1856,6 +1967,16 @@ main.main-content {
           }
 
         }
+        @media (max-width: 767px) {
+          .team-score-name {
+            .team-score-value {
+              font-size: 28px;
+              line-height: 38px;
+              width: 45px;
+              text-align: center;
+            }
+          }
+        }
       }
       &:nth-child(2) {
         //padding-right: 0;
@@ -1879,6 +2000,7 @@ main.main-content {
             line-height: 33px;
           }
         }
+
         &::before {
           content: '-';
           font-size: 159px;
@@ -1915,7 +2037,24 @@ main.main-content {
           }
 
         }
+        @media (max-width: 767px) {
+          margin-top: 0;
+          padding-top: 0;
+          &::after {
+            display: none;
+
+          }
+          .team-score-name {
+            .team-score-value {
+              font-size: 28px;
+              line-height: 38px;
+              width: 45px;
+              text-align: center;
+            }
+          }
+        }
       }
+
     }
     .team-score-status {
       text-align: center;
@@ -1924,7 +2063,11 @@ main.main-content {
       font-weight: 400;
       flex: 0 0 100%;
       width: 100%;
-
+      @media (max-width: 767px) {
+        font-size: 11px;
+        line-height: 16px;
+        margin-top: 12px;
+      }
     }
   }
 }
@@ -1976,6 +2119,12 @@ main.main-content {
     text-align: left;
     padding: 67px;
   }
+  @media (max-width: 1025px) {
+    padding: 38px 35px;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 0;
+  }
   [class*='icon-'] {
     font-size: 42px;
   }
@@ -1999,6 +2148,14 @@ main.main-content {
         margin-top: 0 !important;
       }
     }
+    @media (max-width: 767px) {
+      & + .match-info-item {
+        margin-top: 33px;
+      }
+      &-score {
+        display: none;
+      }
+    }
   }
   .match-info-title {
     font-size: 28px;
@@ -2012,6 +2169,10 @@ main.main-content {
     @media (max-width: 1025px) {
       margin-bottom: 3.5px;
     }
+    @media (max-width: 1025px) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
   .match-info-value {
     font-size: 24px;
@@ -2021,31 +2182,65 @@ main.main-content {
       font-size: 20px;
       line-height: 25px;
     }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 25px;
+      span[class*='icon-'] {
+        margin-top: 10px;
+        display: inline-flex;
+      }
+    }
   }
 }
 
 .team-table-wrapper {
   background: $matte;
   box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.55);
+  @media (max-width: 767px) {
+    box-shadow: none;
+    border-top: 2px #000 solid;
+  }
+
   .team-table-head-left,
   .team-table-head-right {
     margin-bottom: 20px;
+  }
+  .team-table-head-left {
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+    }
+  }
+  .team-table-head-right {
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
   .team-table-head {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 37px 50px 17px 50px;
+    @media (max-width: 767px) {
+      padding: 33px 35px 29px 35px;
+    }
     &__name {
       display: flex;
       align-items: center;
       padding-right: 20px;
+      @media (max-width: 767px) {
+        padding-right: 0;
+      }
       .team-table-head__logo {
         flex: 0 0 50px;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         overflow: hidden;
+        @media (max-width: 767px) {
+          width: 32px;
+          height: 32px;
+          flex: 0 0 32px;
+        }
         img {
           width: 100%;
           height: 100%;
@@ -2053,11 +2248,18 @@ main.main-content {
         }
         & + .h3 {
           padding-left: 32px;
+          @media (max-width: 767px) {
+            padding-left: 18px;
+          }
         }
       }
       .h3 {
         font-size: 29px;
         line-height: 50px;
+        @media (max-width: 767px) {
+          font-size: 18px;
+          line-height: 32px;
+        }
       }
     }
   }
@@ -2097,6 +2299,11 @@ main.main-content {
   width: 100%;
   display: table;
   padding-bottom: 25px;
+  @media (max-width: 767px) {
+    padding-bottom: 0;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
   &-tr-head {
     .team-table-td {
       padding: 26px;
@@ -2111,11 +2318,21 @@ main.main-content {
         padding-right: 50px;
       }
     }
+    @media (max-width: 767px) {
+      display: none !important;
+    }
   }
   &-tr {
     display: table-row;
     &:nth-child(odd) {
       background: #221F20;
+      @media (max-width: 767px) {
+        background: transparent;
+      }
+    }
+    @media (max-width: 767px) {
+      display: flex;
+      margin-bottom: 25px;
     }
   }
   &-td {
@@ -2125,11 +2342,32 @@ main.main-content {
     line-height: 25px;
     text-transform: uppercase;
     padding: 20px 26px;
+    @media (max-width: 767px) {
+      font-size: 15px;
+      line-height: 21px;
+    }
     &:first-child {
       padding-left: 50px;
+      @media (max-width: 767px) {
+        padding-left: 0;
+        font-weight: 700;
+      }
     }
     &:last-child {
       padding-right: 50px;
+      @media (max-width: 767px) {
+        padding-right: 0;
+        padding-left: 7px;
+
+      }
+    }
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+  }
+  &-status {
+    @media (max-width: 767px) {
+      order: -1;
     }
   }
   .status {
@@ -2148,6 +2386,11 @@ main.main-content {
       left: 0;
       top: 50%;
       margin-top: -4.5px;
+      @media (max-width: 767px) {
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
+      }
     }
     &-online {
       &::before {
@@ -2161,6 +2404,42 @@ main.main-content {
       }
 
     }
+    @media (max-width: 767px) {
+      width: 11px;
+      color: transparent;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+  &.team-table-schedule {
+    @media (max-width: 767px) {
+      padding-left: 0;
+      padding-right: 0;
+      .team-table-tr {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .team-table-td {
+        //flex: 0 0 100%;
+        //width: 100%;
+        //max-width: 100%;
+        padding: 0;
+        & + .team-table-td {
+          margin-top: 1px;
+        }
+      }
+      .team-table-comp-name {
+        font-weight: 400;
+        flex: 0 0 100%;
+      }
+      .team-table-map {
+        font-weight: 700;
+        order: -1;
+      }
+      .team-table-time {
+        order: -1;
+      }
+    }
   }
 }
 
@@ -2173,6 +2452,10 @@ main.main-content {
     margin-right: -16px;
     justify-content: flex-start;
   }
+  @media (max-width: 1025px) {
+    margin-left: -11px;
+    margin-right: -11px;
+  }
   .col-match-map {
     padding-left: 30px;
     padding-right: 30px;
@@ -2182,6 +2465,13 @@ main.main-content {
       max-width: 25%;
       padding-left: 16px;
       padding-right: 16px;
+    }
+    @media (max-width: 767px) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 11px;
+      padding-right: 11px;
+      margin-bottom: 18px;
     }
   }
 }
@@ -2205,6 +2495,9 @@ main.main-content {
     line-height: 34px;
     text-transform: uppercase;
     z-index: 2;
+    @media (max-width: 767px) {
+      font-size: 8px;
+    }
   }
   .match-map-image {
     display: block;
@@ -2226,9 +2519,17 @@ main.main-content {
       line-height: 13px;
       padding-top: 13px;
     }
+    @media (max-width:767px) {
+      font-size: 9px;
+      line-height: 11px;
+      padding-top: 10px;
+    }
     span {
       padding: 13px 0;
       display: block;
+      @media (max-width:767px) {
+        padding: 6px 0 0 0 ;
+      }
     }
   }
   .team-logos {
@@ -2237,6 +2538,9 @@ main.main-content {
     @media (max-width:1025px) {
       padding-left: 20px;
       padding-right: 0;
+    }
+    @media (max-width:767px) {
+      padding-left: 14px;
     }
     .team-logo {
       width: 58px;
@@ -2248,6 +2552,10 @@ main.main-content {
         height: 32px;
 
       }
+      @media (max-width:767px) {
+        width: 22px;
+        height: 22px;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -2257,6 +2565,9 @@ main.main-content {
         margin-left: -29px;
         @media (max-width:1025px) {
           margin-left: -15px;
+        }
+        @media (max-width:767px) {
+          margin-left: -10px;
         }
       }
     }
@@ -2357,6 +2668,9 @@ main.main-content {
   h3,
   h4 {
     margin-bottom: 50px;
+    @media (max-width: 767px) {
+      margin-bottom: 25px;
+    }
   }
   @media (max-width: 1025px) {
     box-shadow: none;
@@ -2364,6 +2678,10 @@ main.main-content {
     padding-right: 48px;
     max-width: 880px;
     padding-bottom: 0;
+  }
+  @media (max-width: 767px) {
+    margin-top: 70px;
+    padding: 0 35px;
   }
 }
 .scroll-text-wrapper {
@@ -2381,6 +2699,9 @@ main.main-content {
   h3,
   h4 {
     margin-bottom: 40px;
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
   }
   h5 {
     margin-bottom: 15px;
@@ -2390,16 +2711,27 @@ main.main-content {
     @media (max-width: 1025px) {
       font-size: 20px;
     }
+    @media (max-width: 767px) {
+      font-size: 14px;
+      line-height: 27px;
+    }
     & + h1,
     & + h2,
     & + h3,
     & + h4,
     & + h5 {
       margin-top: 50px;
+      @media (max-width: 767px) {
+        margin-top: 35px;
+      }
+
     }
   }
   .mCSB_inside>.mCSB_container {
     margin-right: 50px;
+    @media (max-width: 767px) {
+      margin-right: 0;
+    }
   }
   .scroll-text {
     max-height: 442px;
@@ -2766,6 +3098,11 @@ main.main-content {
     position: relative;
     min-width: 190px;
     text-align: left;
+    @media (max-width: 767px) {
+      padding: 8px 15px 11px 15px;
+      font-size: 12px;
+      line-height: 17px;
+    }
     &:focus {
       outline: none;
     }
@@ -2812,6 +3149,11 @@ main.main-content {
       width: 100%;
       text-align: left;
       font-size: 18px;
+      @media (max-width: 767px) {
+        padding: 8px 15px 11px 15px;
+        font-size: 12px;
+        line-height: 17px;
+      }
       &.active {
         background: $white;
         color: $matte;
@@ -2851,6 +3193,12 @@ main.main-content {
   }
   @media (max-width: 1025px) {
     max-width:calc(100% - 96px);
+  }
+  @media (max-width: 767px) {
+    max-width: 100%;
+    & + .col-team-table {
+      margin-top: 0;
+    }
   }
 }
 .col-watch {
