@@ -10,21 +10,29 @@
   padding-top: 20px;
   padding-bottom: 20px;
   @media (max-width: 1025px) {
-    padding-left: 0;
-    margin-left: 0;
-    width: 100% !important;
-    .swiper-wrapper {
-      flex-wrap: wrap;
-      margin-left: -6px;
-      margin-right: -6px;
-      .swiper-slide {
-        flex: 0 0 33.3333%;
-        max-width: 33.3333%;
-        padding: 6px;
-        &:nth-child(n+7) {
-          display: none;
+    @media (min-width: 767px) {
+      padding-left: 0;
+      margin-left: 0;
+      width: 100% !important;
+      .swiper-wrapper {
+        flex-wrap: wrap;
+        margin-left: -6px;
+        margin-right: -6px;
+        .swiper-slide {
+          flex: 0 0 33.3333%;
+          max-width: 33.3333%;
+          padding: 6px;
+          &:nth-child(n+7) {
+            display: none;
+          }
         }
       }
+    }
+  }
+  @media (max-width: 767px) {
+    //padding-right: 30px;
+    .swiper-slide {
+      width: 315px;
     }
   }
 }
@@ -164,6 +172,9 @@
     @media (max-width: 1025px) {
       width: 447px !important;
     }
+    @media (max-width: 767px) {
+      width: 315px !important;
+    }
   }
 }
 
@@ -171,7 +182,10 @@
   @media (max-width: 1025px) {
     padding: 0 45px;
   }
-
+  @media (max-width: 1025px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 .competition-mobile-slider {
@@ -179,5 +193,12 @@
   padding-right: 45px;
   .swiper-slide {
     width: 447px;
+    @media (max-width: 767px) {
+      width: 315px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

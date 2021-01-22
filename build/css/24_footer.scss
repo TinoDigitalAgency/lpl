@@ -10,6 +10,16 @@
     padding: 86px 30px 80px 30px;
     background: $matte;
   }
+  @media (max-width: 990px) {
+    .row {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 767px) {
+    padding-top: 68px;
+    padding-left: 0;
+    padding-right: 0;
+  }
   .footer-inner {
     flex: 0 0 100%;
     max-width: 1680px;
@@ -47,6 +57,9 @@
       margin-bottom: 100px;
 
     }
+    @media (max-width: 767px) {
+      margin-bottom: 60px;
+    }
   }
   .footer-col-logo {
     flex: 0 0 20%;
@@ -69,9 +82,17 @@
       width: 100%;
       max-width: 100%;
     }
+    @media (max-width: 990px) {
+      max-width: 500px;
+    }
     .row {
       //display: flex;
       justify-content: space-between;
+      @media (max-width: 767px) {
+        margin-left: -15px;
+        margin-right: -15px;
+      }
+
     }
   }
   .footer-col-menu {
@@ -79,14 +100,43 @@
     max-width: 25%;
     padding-left: 20px;
     padding-right: 20px;
+    @media (max-width: 990px) {
+      flex:  0 0 50%;
+      max-width: 250px;
+      margin-bottom: 40px;
+      //display: flex;
+      //flex-direction: column;
+      //align-items: center;
+      h4 {
+        //max-width: 220px;
+        //flex: 0 0 100%;
+        //width: 100%;
+      }
+    }
+    @media (max-width: 767px) {
+      max-width: 50%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .footer-title,
     h4 {
       margin-bottom: 30px;
       color: $white;
+      @media (max-width: 767px) {
+        margin-bottom: 17px;
+        font-size: 18px;
+        line-height: 25px;
+      }
     }
   }
   .footer-menu {
     margin: 0;
     padding: 0;
+    @media (max-width: 990px) {
+      //max-width: 220px;
+      //flex: 0 0 100%;
+      //width: 100%;
+    }
     li {
       a {
         display: block;
@@ -97,12 +147,22 @@
         @media (max-width: 1700px) {
           font-size: 16px;
         }
+        @media (max-width: 767px) {
+          font-size: 15px;
+          line-height: 21px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
         &:hover {
           color: $green;
         }
       }
       & + li {
         margin-top: 20px;
+        @media (max-width: 767px) {
+          margin-top: 8px;
+        }
       }
     }
   }
@@ -124,11 +184,19 @@
       @media (max-width: 1400px) {
         font-size: 16px;
       }
+      @media (max-width: 767px) {
+        font-size: 10px;
+        line-height: 10px;
+      }
       a {
         color: #6477BE;
         font-weight: 400;
         @media (max-width: 1400px) {
           font-size: 16px;
+        }
+        @media (max-width: 767px) {
+          font-size: 10px;
+          line-height: 10px;
         }
         &:hover {
           color: $green;
@@ -158,6 +226,9 @@
           justify-content: center;
           align-items: center;
         }
+        @media (max-width: 767px) {
+          
+        }
       }
       .icon-fb {
         font-size: 35px;
@@ -178,6 +249,10 @@
         font-size: 35px;
       }
     }
+
+    @media(max-width: 767px)  {
+      margin-top: 10px;
+    }
   }
   .footer-col-copy {
     text-align: right;
@@ -192,9 +267,16 @@
       text-align: center;
       margin-top: 4px;
     }
+    @media (max-width: 767px) {
+      margin-top: 2px;
+    }
     .copy {
       @media (max-width: 1400px) {
         font-size: 16px;
+      }
+      @media (max-width: 767px) {
+        font-size: 10px;
+        line-height: 10px;
       }
       text-transform: uppercase;
       color: $white

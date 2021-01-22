@@ -56,12 +56,22 @@ h1,.h1 {
   font-weight: 700;
   line-height: 98px;
   margin: 0;
+  @media (max-width: 1025px) {
+    font-size: 45px;
+    line-height: 55px;
+  }
+
 }
 h2,.h2 {
   font-size: 48px;
   line-height: 52px;
   font-weight: 700;
   margin: 0;
+  @media (max-width: 1025px) {
+    font-size: 39px;
+    line-height: 48px;
+  }
+
 }
 h3,.h3 {
   font-size: 34px;
@@ -71,6 +81,10 @@ h3,.h3 {
   @media (max-width: 1025px) {
     font-size: 25px;
     line-height: 35px;
+  }
+  @media (max-width: 767px) {
+    font-size: 18px;
+    line-height: 33px;
   }
 }
 h4,.h4 {

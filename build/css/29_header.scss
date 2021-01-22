@@ -8,6 +8,10 @@
     transition: all 400ms;
     border-bottom: 2px solid transparent;
   }
+  @media (max-width: 767px) {
+    border-color: $green;
+    box-shadow: none;
+  }
   &.open-menu-header {
     border-color: $green;
     //transform: translateY(-58px);
@@ -42,6 +46,10 @@
       font-size: 30px;
       line-height: 43px;
     }
+    @media (max-width: 767px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
     img {
       max-width: 151px;
     }
@@ -53,6 +61,18 @@
       display: none;
     }
   }
+  .col-logo {
+    @media (max-width: 767px) {
+      flex: 0 0 155px;
+      max-width: 155px;
+    }
+  }
+  .col-button {
+    @media (max-width: 767px) {
+      flex: 0 0 calc(100% - 155px);
+      max-width: calc(100% - 155px);
+    }
+  }
   .col-logo,
   .col-button {
     flex: 0 0 224px;
@@ -62,6 +82,7 @@
         display: none;
       }
     }
+
   }
   .col-button {
     min-height: 43px;
@@ -83,6 +104,9 @@
       transform: translateY(-50%);
       width: 438px;
       pointer-events: none;
+      @media (max-width: 767px) {
+        width: calc(100vw - 50px);
+      }
     }
 
     .btn-search {
@@ -102,6 +126,10 @@
         font-size: 29px;
         width: 43px;
         height: 43px;
+      }
+      @media (max-width: 767px) {
+        font-size: 20px;
+
       }
       &:hover {
         color: $green;
@@ -143,6 +171,10 @@
       width: calc(100% + 30px);
       display: none;
       padding: 37px 24px;
+      @media (max-width: 767px) {
+        left: -30px;
+        width: calc(100% + 60px);
+      }
       .search-result-item {
         display: flex;
         padding: 19px 0;
@@ -205,6 +237,9 @@
       padding-right: 65px;
       padding-top: 33px;
       padding-bottom: 33px;
+    }
+    @media (max-width: 767px) {
+      padding: 20px 45px 20px 30px;
     }
   }
 
@@ -324,6 +359,12 @@
   border: none;
   border-radius: 50%;
   background: #2ED88B;
+  @media (max-width: 767px) {
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+  }
   &:focus {
     outline: none;
   }
@@ -338,6 +379,7 @@
     margin-top: -1.5px;
     margin-left: -14px;
     transition: all 400ms;
+
     &:nth-child(1) {
       top: calc(50% - 9px);
     }
@@ -346,6 +388,19 @@
     }
     &:nth-child(3) {
       top: calc(50% + 9px);
+    }
+    @media (max-width: 767px) {
+      width: 20px;
+      margin-left: -10px;
+      height: 2px;
+      margin-top: -1px;
+      &:nth-child(1) {
+        top: calc(50% - 6px);
+      }
+      &:nth-child(3) {
+         top: calc(50% + 6px);
+       }
+
     }
   }
   &.active {
@@ -379,6 +434,18 @@
   display: none;
   pointer-events: none;
   //display: none;
+  .mobile-menu-title {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: 700;
+      margin-bottom: 17px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
   &.open-menu {
     pointer-events: auto;
     .mobile-menu-inner {
@@ -400,6 +467,12 @@
   }
   .button-group {
     padding: 160px 45px 54px 45px;
+    @media (max-width: 767px) {
+      padding-top: 115px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 45px;
+    }
     .btn {
       width: 100%;
       & + .btn {
@@ -418,15 +491,28 @@
   .mobile-menu {
     //padding-bottom: 100px;
     padding: 43px 48px 68px 48px;
+    @media (max-width: 767px) {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 34px;
+      padding-bottom: 26px;
+    }
     li {
       & + li {
         margin-top: 46px;
+        @media (max-width: 767px) {
+          margin-top: 24px;
+        }
       }
       a {
         display: block;
         font-size: 48px;
         line-height: 85px;
         color: $white;
+        @media (max-width: 767px) {
+          font-size: 24px;
+          line-height: 33px;
+        }
       }
     }
   }
@@ -435,6 +521,9 @@
   }
   .mCSB_scrollTools {
     z-index: 2;
+    @media (max-width: 767px) {
+      opacity: 0 !important;
+    }
   }
   .mobileHeroGameList-slider {
     width: 100%;
@@ -444,6 +533,11 @@
     padding-bottom: 200px;
     padding-left: 48px;
     padding-right: 48px;
+    @media (max-width: 767px) {
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 100px;
+    }
     .btn {
       width: 100%;
       background: $matte;

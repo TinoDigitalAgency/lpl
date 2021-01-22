@@ -1,6 +1,9 @@
 .section {
   .section-inner {
     padding: 60px 0;
+    @media (max-width: 767px) {
+      padding: 30px 0;
+    }
   }
 }
 .section-hero {
@@ -11,12 +14,21 @@
     @media (max-width: 1025px) {
       padding-bottom: 50px;
     }
+    @media (max-width: 767px) {
+      padding-top: 56px;
+      .platform-block {
+        display: none;
+      }
+    }
   }
   .h1 {
     text-transform: uppercase;
     margin-bottom: 27px;
     @media (max-width: 1025px) {
       margin-bottom: 19px;
+    }
+    @media (max-width: 767px) {
+      text-transform: none;
     }
     .small {
       display: block;
@@ -27,15 +39,58 @@
       @media (max-width: 1025px) {
         font-size: 36px;
       }
+      @media (max-width: 767px) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+  .btn-mobile-signin {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
     }
   }
   .button-group {
     text-align: center;
+    @media (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 56px;
+      .btn {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 315px;
+        & + .btn {
+          background: $matte;
+          color: $white;
+          margin-top: 12px;
+          &:hover {
+            color: $matte;
+            background: $white;
+          }
+        }
+      }
+    }
   }
   .hero-game-list {
     margin-top: 100px;
     @media (max-width: 1025px) {
       margin-top: 115px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 0;
+    }
+  }
+  .mobile-title {
+    display: none;
+    @media (max-width: 767px) {
+      display: block;
+      margin-bottom: 17px;
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-top: 62px;
     }
   }
 }
@@ -50,6 +105,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 1200px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     &::before {
       content: '';
       width: 100%;
@@ -117,24 +176,36 @@
     z-index: 2;
     .section-inner {
       padding-top: 0;
+      @media (max-width: 1025px) {
+        padding-bottom: 0;
+      }
     }
   }
 }
 .section-competition {
   .section-inner {
     padding-top: 100px;
+    @media (max-width: 767px) {
+      padding-top: 70px;
+    }
   }
   .platform-block {
     margin-bottom: 65px;
   }
   .section-title {
     @media (max-width: 1025px) {
-      margin-bottom: 23px;
       align-items: flex-start;
       .h2 {
         text-align: left;
       }
     }
+    @media (max-width: 767px) {
+      .h2 {
+        font-size: 24px;
+        line-height: 33px;
+      }
+    }
+
 
     p {
 
@@ -219,6 +290,9 @@
       text-align: left;
       margin-bottom: 30px;
     }
+    @media (max-width: 767px) {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -280,12 +354,19 @@
         opacity: .12;
         background: rgb(24,149,101);
         background: linear-gradient(90deg, rgba(24,149,101,1) 0%, rgba(24,149,101,0.5242471988795518) 40%, rgba(100,98,99,0) 100%);
+        @media (max-width: 767px) {
+          background: linear-gradient(90deg, rgba(#2C9E65,1) 0%, rgba(#7DBE9E,0.55) 50%, rgba(#000000,0) 100%);
+          opacity: .36;
+        }
       }
     }
     .game-logo {
       width: 100%;
       flex: 0 0 100%;
       max-width: 482px;
+      @media (max-width: 767px) {
+        max-width: 240px;
+      }
     }
   }
   &__csgo {
@@ -300,6 +381,9 @@
       width: 100%;
       flex: 0 0 100%;
       max-width: 404px;
+      @media (max-width: 767px) {
+        max-width: 240px;
+      }
     }
   }
   &__pubg {
@@ -314,6 +398,9 @@
       width: 100%;
       flex: 0 0 100%;
       max-width: 459px;
+      @media (max-width: 767px) {
+        max-width: 240px;
+      }
     }
   }
   &__valorant {
@@ -328,6 +415,9 @@
       width: 100%;
       flex: 0 0 100%;
       max-width: 525px;
+      @media (max-width: 767px) {
+        max-width: 240px;
+      }
     }
   }
   &__rainbow {
@@ -342,6 +432,9 @@
       width: 100%;
       flex: 0 0 100%;
       max-width: 601px;
+      @media (max-width: 767px) {
+        max-width: 240px;
+      }
     }
   }
   & + .section-game-competition {
@@ -351,6 +444,9 @@
       margin-top: -203px;
       position: relative;
       z-index: 2;
+    }
+    @media (max-width: 767px) {
+      margin-top: -150px;
     }
     .section-inner {
       padding-top: 0;
@@ -379,9 +475,19 @@
 }
 
 .section-support {
+  @media (max-width: 1025px) {
+    .section-inner {
+      padding-top: 0;
+    }
+  }
   .h2 {
     margin-bottom: 45px;
     text-align: center;
+    @media (max-width: 1025px) {
+      font-size: 28px;
+      line-height: 39px;
+      //margin-bottom: 44px;
+    }
   }
 }
 
@@ -394,6 +500,11 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @media (max-width: 1025px) {
+      padding-bottom: 150px;
+      padding-top: 150px;
+      min-height: calc(100vh - 111px);
+    }
     &::before {
       content: '';
       width: 100%;
@@ -414,6 +525,9 @@
     z-index: 2;
     .section-inner {
       padding-top: 0;
+    }
+    @media (max-width: 1025px) {
+      margin-top: 0;
     }
   }
 
@@ -454,12 +568,27 @@
     }
   }
 }
+.section-match-info {
+  @media (max-width: 1025px) {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .row {
+      justify-content: center;
+    }
+  }
+}
 
 .section-match-maps {
  .h2 {
    text-align: center;
    text-transform: uppercase;
    margin-bottom: 100px;
+   @media (max-width: 1025px) {
+     margin-bottom: 44px;
+     text-align: left;
+   }
  }
   .section-inner {
     padding-bottom: 10px;
@@ -470,6 +599,10 @@
    text-align: center;
    text-transform: uppercase;
    margin-bottom: 100px;
+   @media (max-width: 1025px) {
+     margin-bottom: 44px;
+     text-align: left;
+   }
  }
 }
 .section-forum {
@@ -477,23 +610,43 @@
    text-align: center;
    text-transform: uppercase;
    margin-bottom: 70px;
+   @media (max-width: 1025px) {
+     margin-bottom: 44px;
+     text-align: left;
+   }
+
  }
 }
 .watch-block {
   margin-top: 57px;
+  @media (max-width: 767px) {
+    margin-top: 0px;
+  }
 }
-
+//.section-watch-now {}
 .section-watch-now {
   //display: none;
   .section-title {
     margin-bottom: 5px;
+    @media (max-width: 767px) {
+      margin-bottom: 17px;
+    }
   }
   @media (max-width: 1025px) {
     display: block;
   }
+  @media (max-width: 767px) {
+    .section-inner {
+      padding-top: 0;
+    }
+
+  }
   .button-group {
     flex: 0 0 100%;
     margin-top: 54px;
+    @media (max-width: 767px) {
+      margin-top: 18px;
+    }
     .btn {
       width: 100%;
     }
@@ -506,8 +659,28 @@
     .swiper-navigation {
       display: none;
     }
-    .slider-wrapper {
-      width: 100% !important;
+    @media (min-width: 767px) {
+      .slider-wrapper {
+        width: 100% !important;
+      }
+
+    }
+  }
+  @media (max-width: 767px) {
+    .section-title {
+      margin-bottom: 0;
+    }
+  }
+}
+.section-competition-info {
+  @media (max-width: 1025px) {
+    .container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .competition-table__large {
+      box-shadow: none;
     }
   }
 }

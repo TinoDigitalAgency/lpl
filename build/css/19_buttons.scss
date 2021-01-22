@@ -11,6 +11,12 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  @media (max-width: 767px) {
+    font-size: 17px;
+    line-height: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 .btn-hero {
   background: #2ED88B;
@@ -285,4 +291,9 @@
   color: $matte;
   background: $white;
   font-size: 15px;
+  @media (max-width: 767px) {
+    width: 29px;
+    height: 29px;
+    font-size: 10px;
+  }
 }

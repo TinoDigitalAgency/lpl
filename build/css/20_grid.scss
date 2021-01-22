@@ -13,6 +13,10 @@
     padding-left: 45px;
     padding-right: 45px;
   }
+  @media (max-width: 1025px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 .row {
   display: flex;
@@ -44,4 +48,9 @@
   max-width: 25%;
   padding-left: 20px;
   padding-right: 20px;
+}
+.hide-sm {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
 }

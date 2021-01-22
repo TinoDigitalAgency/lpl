@@ -75,6 +75,8 @@
             spaceBetween: 60,
             freeMode: true,
             pagination: false,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -88,6 +90,8 @@
             spaceBetween: 60,
             freeMode: true,
             pagination: false,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -98,7 +102,7 @@
         });
         var teamSlider = new Swiper('.team-slider', {
             slidesPerView: 'auto',
-            spaceBetween: 60,
+            spaceBetween: 30,
             freeMode: true,
             pagination: false,
             mousewheel: {
@@ -107,6 +111,15 @@
             navigation: {
                 nextEl: '.team-slider-next',
                 prevEl: '.team-slider-prev',
+            },
+            breakpoints: {
+                768: {
+                    spaceBetween: 30,
+                },
+                1025: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 60,
+                }
             }
         });
 
@@ -116,6 +129,8 @@
             freeMode: true,
             pagination: false,
             loop: true,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -130,6 +145,8 @@
             spaceBetween: 60,
             freeMode: true,
             pagination: false,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -154,7 +171,7 @@
             },
             breakpoints: {
                 1025: {
-                    slidesPerView: 'auto',
+                    slidesPerView: 3,
                     spaceBetween: 30,
                 },
                 1400: {
@@ -185,6 +202,8 @@
             slidesPerView: 'auto',
             spaceBetween: 39,
             freeMode: true,
+            observer: true,
+            observeParents: true,
             mousewheel: {
                 forceToAxis: true,
             }
@@ -204,7 +223,7 @@
 
         //--------- TEAM SLIDER DESTROY -------//
         $(window).on('resize load',function () {
-            if($(window).width() < 1025) {
+            if($(window).width() < 1025 && $(window).width() > 767) {
                 if ( teamSlider !== undefined ) {
 
                     teamSlider.destroy( true, true );
@@ -213,11 +232,11 @@
                 }
             } else {
 
-                console.log(teamSlider);
+                // console.log(teamSlider);
                 if ( teamSlider == undefined) {
                     teamSlider = new Swiper('.team-slider', {
                         slidesPerView: 'auto',
-                        spaceBetween: 60,
+                        spaceBetween: 30,
                         freeMode: true,
                         pagination: false,
                         mousewheel: {
@@ -226,6 +245,15 @@
                         navigation: {
                             nextEl: '.team-slider-next',
                             prevEl: '.team-slider-prev',
+                        },
+                        breakpoints: {
+                            768: {
+                                spaceBetween: 30,
+                            },
+                            1025: {
+                                slidesPerView: 'auto',
+                                spaceBetween: 60,
+                            }
                         }
                     });
                 }
@@ -244,7 +272,7 @@
                     onEnd:function() {
                         // console.log(data);
                         var elClass = this;
-                        console.log(elClass);
+                        // console.log(elClass);
                         $(this.el).parents('.status').addClass('started');
                         $(this.el).parents('.status').find('.countdown-title').text('Live Now');
                         $(this.el).parents('.status').find('.countdown').fadeOut(400);
@@ -293,8 +321,8 @@
 
 
         //--------- TAB HANDLER ---------//
-        $('[data-tab*="#"]').on('click',function (e) {
-            e.preventDefault();
+        $('[data-tab]').on('click',function (e) {
+            // e.preventDefault();
             if(!$(this).hasClass('active')) {
                 var parent = $(this).parents('.tab-wrapper');
                 var tabID = $(this).attr('data-tab');
@@ -307,13 +335,80 @@
                 $(this).addClass('active');
 
                 parent.find('.tab-item').stop().fadeOut(400);
+                if($(this).hasClass('dropdown-menu-item')) {
+                    console.log('Has Dropdown');
+                    $(this).parents('.custom-dropdown').removeClass('custom-dropdown--open');
+                    $(this).parents('.custom-dropdown').find('.dropdown-trigger').text($(this).text());
+                    parent.find('.tab-menu-mobile-item').stop().fadeOut(400).removeClass('active show');
+                }
                 setTimeout(function () {
                     parent.find('.tab-item').removeClass('active show');
                     $(tabID).stop().fadeIn(400).addClass('active');
                     parent.find('.tab-content').css({
                         height:  $(tabID).outerHeight()
                     });
+                    console.log($('.tab-menu-mobile-item[data-menu-for="'+tabID+'"]'));
+                    $('.tab-menu-mobile-item[data-menu-for="'+tabID+'"]').stop().fadeIn(400).addClass('active');
+                    if($(this).hasClass('dropdown-menu-item')) {
+
+                        console.log($('.tab-menu-mobile-item[data-menu-for="'+tabID+'"]'));
+                    }
                 },400);
+
+
+            }
+
+        });
+        $('[data-tab-mobile]').on('click',function (e) {
+            if(!$(this).hasClass('active')) {
+                var parent = $(this).parents('.tab-wrapper');
+                var tabID = $(this).attr('data-tab-mobile');
+                var parentTabID = $(this).parents('.tab-menu-mobile-item').attr('data-menu-for');
+                console.log(tabID);
+
+                // parent.find('.tab-content').css({
+                //     height: parent.find('.tab-content').outerHeight()
+                // });
+                $(this).parents('.tab-menu-mobile-item').find('[data-tab-mobile]').removeClass('active');
+                $(this).addClass('active');
+
+                $(parentTabID).find('.child-tab').stop().fadeOut(400);
+                setTimeout(function () {
+                    $(parentTabID).find('.tab-item').removeClass('active show');
+                    $(tabID).stop().fadeIn(400).addClass('active');
+                    console.log($(tabID).height());
+                    parent.find('.tab-content').css({
+                        height:  $(tabID).height()
+                    });
+                },400);
+
+            }
+        });
+        $(window).on('load resize', function () {
+            // if($(window).width() < 1500) {
+            //     $('.competition-table__large .tab-head').addClass('mobile-view');
+            // } else {
+            //     $('.competition-table__large .tab-head').removeClass('mobile-view');
+            // }
+
+        });
+        $('.dropdown-trigger').on('click',function (e) {
+            e.preventDefault();
+            $(this).parents('.custom-dropdown').toggleClass('custom-dropdown--open');
+        });
+        $('.dropdown-menu-item').on('click',function () {
+            if(!$(this).hasClass('active')) {
+                $(this).parents('.custom-dropdown').find('.dropdown-menu-item').removeClass('active');
+                $(this).addClass('active');
+                $(this).parents('.custom-dropdown').removeClass('custom-dropdown--open');
+                $(this).parents('.custom-dropdown').find('.dropdown-trigger').text($(this).text());
+            }
+        });
+        $(document).mouseup(function (e){ // событие клика по веб-документу
+            var div = $(".custom-dropdown"); // тут указываем ID элемента
+            if (!div.is(e.target) // если клик был не по нашему блоку
+                && div.has(e.target).length === 0) { // и не по его дочерним элементам
+                div.removeClass('custom-dropdown--open'); // скрываем его
             }
         });
 
