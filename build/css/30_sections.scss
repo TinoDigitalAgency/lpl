@@ -770,3 +770,99 @@
     }
   }
 }
+.section-hero-about {
+  .section-inner {
+    padding-bottom: 80px;
+    padding-top: 120px;
+  }
+  .container {
+    padding-bottom: 170px;
+  }
+  .h1 {
+    text-transform: uppercase;
+  }
+  .button-group {
+    text-align: center;
+    margin-top: 37px;
+  }
+}
+.section-text {
+  .section-inner {
+    padding-bottom: 80px;
+  }
+  .section-title {
+    margin-bottom: 36px;
+  }
+}
+.section-cta {
+  padding: 60px 0;
+  .section-inner {
+    padding: 100px 0;
+    border-top: 2px #2ED88B solid;
+    border-bottom: 2px #2ED88B solid;
+  }
+  .h2 {
+    text-transform: uppercase;
+    span {
+      color: #2ED88B;
+    }
+  }
+  .button-group {
+    margin-top: 38px;
+  }
+}
+
+.section-page {
+    .section-inner {
+      padding: 120px 0 150px 0;
+    }
+  .page-title {
+    margin-bottom: 85px;
+  }
+
+}
+
+.section-game-logos {
+  .section-inner {
+    padding: 120px 0 0 0;
+  }
+}
+
+.section-watch {
+  .section-inner {
+    padding-top: 143px;
+  }
+  .page-title {
+    margin-bottom: 230px;
+    .small {
+      color: $green;
+      font-size: 36px;
+      line-height: 36px;
+      font-weight: 400;
+      display: block;
+      text-align: center;
+    }
+  }
+}
+.section-single {
+  .section-inner {
+    padding-top: 110px;
+    padding-bottom: 100px;
+  }
+  .single-title {
+    text-align: left;
+    font-size: 45px;
+    line-height: 61px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .meta {
+    font-size: 22px;
+    line-height: 31px;
+    opacity: .71;
+    margin-bottom: 90px;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}

@@ -102,6 +102,18 @@
   margin-top: -35px;
 }
 
+.competition-slider {
+  & + .competition-slider {
+    margin-top: 126px;
+  }
+}
+.twitch-slider {
+  & + .twitch-slider {
+    margin-top: 110px;
+  }
+}
+
+
 
 .slider-wrapper {
   position: relative;

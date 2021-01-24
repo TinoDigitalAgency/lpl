@@ -443,13 +443,23 @@
             if($(this).hasClass('main-menu-item__has-child')) {
                 $('.header-wrapper').addClass('header-hover');
                 $(this).find('.main-menu-link').addClass('active');
+                $(this).find('.submenu').addClass('active');
             } else {
                 $('.header-wrapper').removeClass('header-hover');
+                $(this).find('.submenu').removeClass('active');
                 $('.main-menu-link').removeClass('active');
             }
         }, function () {
             $('.header-wrapper').removeClass('header-hover');
+            $(this).find('.submenu').removeClass('active');
             $('.main-menu-link').removeClass('active');
+        });
+        $('.prof-link-logged,.profile-submenu').hover(function () {
+            $('.header-wrapper').addClass('header-hover header-hover-profile');
+            $('.profile-submenu').stop().fadeIn(400).addClass('active');
+        }, function () {
+            $('.header-wrapper').removeClass('header-hover header-hover-profile');
+            $('.profile-submenu').stop().fadeOut(400).removeClass('active');
         });
 
 
@@ -496,8 +506,61 @@
         $('.video-widget .btn-close').on('click',function (e) {
             e.preventDefault();
             $(this).parents('.video-widget').stop().fadeOut(400);
-        })
+        });
 
+
+        //---------- File Input Handler ------------//
+        $('#file-upload').on('change', function () {
+            getFileData(this);
+        });
+
+        function getFileData(myFile){
+            var file = myFile.files[0];
+            var filename = file.name;
+            $('#filename').val(filename)
+        }
+
+
+        // ------- ANCOR Handler --------//
+        $(".ancor").on("click", function (event) {
+            //отменяем стандартную обработку нажатия по ссылке
+            event.preventDefault();
+
+            //забираем идентификатор бока с атрибута href
+            var id  = $(this).attr('href'),
+
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                top = $(id).offset().top - 200;
+
+            //анимируем переход на расстояние - top за 1500 мс
+            $('body,html').animate({scrollTop: top}, 1500);
+        });
+
+        //--------- FAQ ------------//
+        $('.faq-trigger').on('click',function (e) {
+            e.preventDefault();
+            $(this).parents('.faq').toggleClass('active').find('.faq-body').stop().slideToggle(400);
+        });
+
+        //---------- MODALS -----------//
+        $('.create-ticket-btn').on('click',function (e) {
+            e.preventDefault();
+            $('.modal-ticket').stop().fadeToggle(400);
+            $('body').toggleClass('overflow-hidden');
+        });
+
+        $('[data-modal]').on('click',function (e) {
+            e.preventDefault();
+            console.log('Click Upgrade');
+            var modalId = $(this).attr('data-modal');
+            $(modalId).fadeIn(400).addClass('modal-open');
+            $('body').addClass('overflow-hidden');
+        });
+        $('.close-modal').on('click',function (e) {
+            e.preventDefault();
+            $('.modal').fadeOut(400).removeClass('modal-open');
+            $('body').removeClass('overflow-hidden');
+        });
     });
 
     function initGameItm(item) {

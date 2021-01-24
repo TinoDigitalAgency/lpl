@@ -1,5 +1,5 @@
 .home-body {
-  background: url(../images/Homepage-bg.png) $matte center center no-repeat;
+  background: url(../images/Homepage-fbg.png) $matte center center no-repeat;
   background-attachment: fixed;
   background-size: cover;
 
@@ -3205,5 +3205,373 @@ main.main-content {
   @media (max-width: 990px) {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+}
+.text-block {
+  max-width: 1365px;
+  margin-left: auto;
+  margin-right: auto;
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    & + p {
+      margin-top: 40px;
+    }
+  }
+}
+
+.page-content {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 50px;
+    li {
+      font-size: 26px;
+      font-weight: 400;
+      padding-left: 50px;
+      position: relative;
+      color: $white;
+      & + li {
+        margin-top: 27px;
+      }
+      a {
+        font-size: 26px;
+        color: $white;
+        font-weight: 400;
+        &:hover {
+          color: $green;
+        }
+      }
+      .marker-list {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 700;
+        color: $green;
+      }
+    }
+    & + .title-term {
+      margin-top: 137px;
+    }
+  }
+  .title-term {
+    margin-bottom: 36px;
+    span {
+      color: $green;
+    }
+  }
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    & + .title-term {
+      margin-top: 116px;
+    }
+  }
+}
+
+.page-row {
+  justify-content: center;
+  .page-col {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1200px;
+    &.contact-col {
+      max-width: 890px;
+      flex: 0 0 100%;
+      width: 100%;
+      .h3  {
+        margin-bottom: 55px;
+      }
+      .form-row {
+        .form-col {
+          justify-content: center;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .btn {
+          width: auto;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+
+  }
+  .form-row-btn {
+    margin-top: 78px;
+  }
+}
+.contact-support {
+  margin-top: 36px;
+  margin-bottom: 48px;
+  p {
+    line-height: 18px;
+    font-size: 16px;
+    margin-bottom: 48px;
+  }
+
+}
+.form-text {
+  margin-bottom: 100px;
+  p {
+    margin-bottom: 30px;
+    line-height: 30px;
+    font-weight: 300;
+  }
+  ol,ul {
+    margin-bottom: 30px;
+    padding-left: 25px;
+
+    li {
+      line-height: 30px;
+      font-weight: 300;
+    }
+  }
+}
+.support-block {
+  .h1 {
+    margin-bottom: 38px;
+  }
+  .btn-group {
+    margin-bottom: 111px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.ticket {
+  padding: 28px 13px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px #2ED88B solid;
+  justify-content: space-between;
+  .ticket-left,
+  .ticket-center,
+  .ticket-right {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ticket-title {
+    font-size: 23px;
+    line-height: 28px;
+    display: block;
+    color: $white;
+    &:hover {
+      color: $green;
+    }
+  }
+  .activity {
+    font-size: 14px;
+    line-height: 12px;
+    span {
+      color: $green;
+    }
+  }
+}
+.user-prof-link {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px #2ED88B solid;
+    & + span {
+      padding-left: 10px;
+    }
+  }
+  .user-type {
+    text-transform: uppercase;
+    color: #2ED88B;
+    padding-left: 16px;
+  }
+
+  color: $white;
+  font-size: 18px;
+  font-weight: 400;
+  
+  &:hover {
+    color: $green;
+  }
+  &.admin {
+    img {
+      border-color: #E5AA66;
+    }
+    .user-type {
+      color: #E5AA66;
+    }
+  }
+}
+.ticket-list {
+  .ticket-item {
+    & + .ticket-item {
+      margin-top: 42px;
+    }
+  }
+}
+
+.faq {
+  border: 2px $green solid;
+  .faq-head {
+
+  }
+  .faq-trigger {
+    display: block;
+    padding: 14px 78px 12px 24px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    position: relative;
+    transition: all 400ms;
+    border: none;
+    background: transparent;
+    text-align: left;
+    color: $white;
+    width: 100%;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &::before {
+      width: 29px;
+      height: 29px;
+      content: '';
+      border-radius: 50%;
+      background: $green;
+      position: absolute;
+      right: 18px;
+      top: 8px;
+      transition: all 400ms;
+    }
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 4px 0 4px;
+      border-color: #000000 transparent transparent transparent;
+      position: absolute;
+      right: 28px;
+      top: 20px;
+      transition: all 400ms;
+    }
+  }
+  .faq-body {
+    display: none;
+  }
+  .faq-body-inner {
+    padding-right: 78px;
+    padding-left: 24px;
+    padding-bottom: 27px;
+  }
+  p {
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: 300;
+  }
+  &.active {
+    .faq-trigger {
+      padding-top: 30px;
+      padding-bottom: 12px;
+      &::before {
+        top: 20px;
+      }
+      &::after {
+        top: 32px;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+.faq-item {
+  & + .faq-item {
+    margin-top: 56px;
+  }
+}
+
+
+.row-game-logos {
+  justify-content: center;
+  align-items: center;
+  .game-logo {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 30px;
+    max-width: 20%;
+    display: block;
+    img {
+      max-width: 100%;
+    }
+    @media (max-width: 1700px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+.single-content {
+  img {
+    width: 100%;
+    margin-bottom: 90px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+}
+
+.open-ticket-message {
+  padding: 28px 30px 40px 25px;
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.16);
+  .open-ticket-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 27px;
+    .date {
+      font-size: 14px;
+    }
+  }
+  .ticket-message {
+    p {
+      font-size: 17px;
+      line-height: 30px;
+      &+p {
+        margin-top: 20px;
+      }
+    }
+  }
+  & + .open-ticket-message {
+    margin-top: 21px;
+  }
+}
+.ticket-form {
+  margin-top: 60px;
+  .form-row-btn {
+    margin-top: 40px;
+  }
+}
+.btn-group-support {
+  margin-top: 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 45px !important;
+  .back-link {
+    color: $white;
+    text-transform: uppercase;
+    margin-top: 32px;
+  }
+  .close-ticket-btn {
+    min-width: 338px;
   }
 }

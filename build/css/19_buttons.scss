@@ -18,6 +18,15 @@
     padding-bottom: 10px;
   }
 }
+.btn-border {
+  background: $matte;
+  border: 1px $green solid;
+  color: $white;
+  &:hover {
+    background: $white;
+    color: $green;
+  }
+}
 .btn-hero {
   background: #2ED88B;
   color: $matte;
@@ -45,6 +54,15 @@
   border-color: $pugb;
   &:hover {
     color: $pugb;
+    background: $white;
+  }
+}
+.btn-red {
+  background: #F22347;
+  color: $white;
+  border-color: #F22347;
+  &:hover {
+    color: #F22347;
     background: $white;
   }
 }

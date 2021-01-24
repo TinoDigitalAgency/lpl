@@ -439,7 +439,7 @@
                                     <li><button class="tab-trigger" data-tab="#tab-l4"><span>Amateur</span></button></li>
                                     <li><button class="tab-trigger" data-tab="#tab-l5"><span>Open</span></button></li>
                                 </ul>
-                                <a href="#" class="btn btn-upgrade">UPGRADE TO SILVER+ TO ENTER</a>
+                                <a href="#" class="btn btn-upgrade" data-modal="#upgrade-modal">UPGRADE TO SILVER+ TO ENTER</a>
                             </div>
                             <div class="tab-content">
                                 <div class="tab-item show active" id="tab-l1">
@@ -3819,7 +3819,48 @@
         </div>
     </div>
 </footer>
+<div class="modal" id="upgrade-modal">
+    <div class="modal-inner mCustomScrollbar">
+        <div class="modal-content-wrapper">
+            <div class="modal-content">
+                <div class="modal-title h2">Upgrade for £XX</div>
+                <form action="#" class="upgrade-form">
+                    <div class="form-row">
+                        <div class="col-12 form-col">
+                            <label class="label-input">Card Name</label>
+                            <input type="text" placeholder="Enter your name as it appears on the card">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12 form-col">
+                            <label class="label-input">Card Number</label>
+                            <input type="text" placeholder="Enter your card number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6 form-col">
+                            <label class="label-input">Card Date</label>
+                            <input type="text" placeholder="MM / YY">
+                        </div>
+                        <div class="col-6 form-col">
+                            <label class="label-input">CSV</label>
+                            <input type="text" placeholder="3 digit code">
+                        </div>
+                    </div>
 
+                    <div class="form-row form-row-btn">
+                        <div class="col-6 form-col">
+                            <button class="btn btn-red close-modal" type="submit">Close</button>
+                        </div>
+                        <div class="col-6 form-col">
+                            <button class="btn btn-main" type="submit">UPGRADE NOW</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="js/script.min.js"></script>
 </body>
 </html>
